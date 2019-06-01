@@ -1,0 +1,63 @@
+<html class="betterNotesEditor">
+<head>
+    <meta charset="utf-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; img-src *;">
+<title>Notes</title>
+<!-- <link rel="stylesheet" href="../style/common.css"> -->
+<link rel="stylesheet" href="./better_notes_editor.css">
+<link rel="icon" type="image/png" href="./better_notes_editor.png">
+</head>
+<body class="full panel-group" id="notes-panel">
+<input type="hidden" id="noteId" value="" />
+<header class="toolbar icons">
+    <label id="titlelabel"></label>
+    <input type="text" id="title" value="" readonly="true" />
+
+    <label id="formatlabel"></label>
+    <button id="head1">H1</button>
+    <button id="head2">H2</button>
+    <button id="head3">H3</button>
+    <button id="rule">--</button>
+
+    <button id="bold">B</button>
+    <button id="italic">I</button>
+    <button id="strike">S</button>
+    <button id="under">U</button>
+    <button id="light"><span>H</span></button>
+    <button id="super">s<span>up</span></button>
+    <button id="subs">s<span>ub</span></button>
+
+    <button id="quote">&quot;</button>
+    <button id="code">&lt;/&gt;</button>
+    <button id="link">a</button>
+
+    <button id="bullet">▪</button>
+    <button id="number">1.</button>
+
+    <label id="exportLabel" style="display:none"></label>
+    <div id="exportArea" style="display:none">
+        <div class="above">
+            <span id="exportprompt"></span>
+        </div>
+        <div class="below">
+            <a id="exportTxt" href="" download="">TXT</a>
+            <span>   </span>
+            <a id="exportHtml" href="" download="">HTML</a>
+        </div>
+    </div>
+</header>
+<div class="notes-editor full dual panel-group">
+    <textarea class="note editor col" readonly="true">
+
+    </textarea>
+    <div class="note md col" id="preview"><h1></h1><span></span></div>
+</div>
+<footer>
+<input id="showpreview" type="checkbox"><label id="showPreviewLabel"></label></input>
+<input id="syncscroll" type="checkbox"><label id="syncScrollLabel"></label></input>
+<span class="spacer"></span>
+<b></b> <span id="chars"></span> <span id="words"></span> <span id="lines"></span>
+</footer>
+<!-- <script src="betterNotesEditor.js"></script> -->
+</body>
+</html>
