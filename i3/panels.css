@@ -92,3 +92,11 @@
         width: 100%;
     }
 }
+
+/* Minimize panel when not used */
+/*#panels-container.icons:not(:hover) {
+    width: 1px !important;
+}
+#panels-container.icons:not(:hover) > * {
+    display: none;
+}*/
