@@ -1,0 +1,293 @@
+/* #tabs-container.left, #tabs-container.right { width: 60px !important; }
+#tabs-container.left button.fullheight.alternate, #tabs-container.right button.fullheight.alternate { display: none; } */
+/* .tab-position .tab .tab-audio { display: none !important; } */
+.newtab { display: none }
+.tab-position .tab .progress-indicator { background-color: var(--colorBorderHighlight) !important; }
+.tab-position .tab.unread { font-weight: bold; }
+.tab-position .tab.pinned span.title::before { content: "📌\00a0"; }
+.tab-position .tab .favicon { background-color: transparent !important; }
+.tab-position .tab.active .tab-header .favicon { filter: none !important; }
+
+
+/* Vertical scroll for bottom tab bar */
+.tabs-bottom #tabs-container.no-thumbs {
+  height: 60px !important;
+}
+.tabs-bottom .tab-strip {
+  overflow: scroll;
+}
+.tab-strip::-webkit-scrollbar {
+  height: 0px;
+}
+.tab-strip::-webkit-scrollbar-button {
+  display: none;
+}
+.tab-strip::-webkit-scrollbar-track {
+  background-color: transparent !important;
+  border-width: 0 !important;
+}
+.tab-strip::-webkit-scrollbar-thumb {
+  background: var(--colorBorder) !important;
+  border-radius: var(--radius) !important;
+}
+.tabs-bottom .tab-position {
+  position: initial !important;
+  transform: none !important;
+  display: inline-flex;
+  width: 180px !important;
+}
+.tabs-bottom #tabs-container.view-thumbs .tab-position {
+  height: 100px !important;
+  max-height: 150px !important;
+}
+.tabs-bottom #tabs-container.no-thumbs .tab-position {
+  height: 30px !important;
+  max-height: 30px !important;
+}
+
+
+
+
+/*
+Drop-Down Tab Stacks
+lonm.vivaldi.net
+oandreaus.vivaldi.net
+No Copyright Reserved
+*/
+/*
+A Tab group is presented as a normal tab header,
+but with a group of "indicators" positioned above
+the tab header in a horizontal fashion.
+On hover, we want to make these vertical, show
+the title of the indicator, and drop them down
+below the existing tab header.
+Toggle the comments in .tab-group:hover .tab-indicator:after
+to change how long tab texts are displayed.
+*/
+/*
+Mod 02 LM 2018-APR-08
+- Fix slight offset in side tabs causing hover issues
+- Make thumb hover animations obey user setting
+- Improve contrast of thumb hover text in light theme
+*/
+/*
+Mod 01 OA 04/08/18
+- Added .tab-strip to avoid messing with popup thumbnails background.
+- Added z-index for tab position to work with thumbnails enabled.
+- General graphic changes to make it look like a regular dropdown menu.
+- Added shadows.
+- Added opening animation.
+- Added animation for popups in case someone is using them.
+*/
+/* Change the color of tab groups to improve visibility */
+/*.tab-strip .tab-group{
+  background: var(--colorBgDark) !important;
+  color: var(--colorFgIntense) !important;
+}
+.tab-strip .tab-group.active{
+  background: var(--colorAccentBgDark) !important;
+  color: var(--colorAccentFg) !important;
+}*/
+.tab-strip .tab-group:hover{
+  background: var(--colorBgDarker) !important;
+  color: var(--colorFgIntenser) !important;
+}
+.tab-strip .tab-group.active:hover{
+  background: var(--colorAccentBgDarker) !important;
+  color: var(--colorAccentFg) !important;
+}
+/* Fixes issues with Thumbnails */
+.tab-strip .tab-position:hover {
+  z-index: 17 !important;
+}
+/* Make the tab group indicator vertical below tab header */
+.tab-group:hover .tab-group-indicator {
+  flex-direction: column;
+  position: relative;
+  top: 30px !important;
+  padding-bottom: 8px;
+  background: var(--colorBg);
+  border-bottom-left-radius: var(--radiusHalf);
+  border-bottom-right-radius: var(--radiusHalf);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 13px 0 rgba(0, 0, 0, 0.19);
+  transition: 50ms ease-out;
+}
+/* Prevent CSS Hover Spam if mouse is above tab header */
+.tab-group:hover .tab-group-indicator:before {
+  content: '';
+  height: 1px;
+  width: calc(100% - 4px);
+  position: absolute;
+  left: 0px;
+  background-color: var(--colorBg);
+  border: 1px solid transparent;
+}
+/* Space tab indicators vertically */
+.tab-group:hover .tab-indicator {
+  height: 30px !important;
+  margin: 0px !important;
+  background-color: transparent !important;
+}
+/* Background (shape) of tab indicator */
+.tab-group:hover .tab-indicator:before {
+  content: '';
+  background: var(--colorBg);
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--radiusThird);
+}
+/* Background (shape) of active tab indicator */
+.tab-group:hover .tab-indicator.active:before{
+  background: var(--colorAccentBg);
+}
+/* Foreground (text) of tab indicator */
+.tab-group:hover .tab-indicator:after {
+  content: attr(title);
+  display: block;
+  width: calc(100% - 4px);
+  position: relative;
+  top: -20px;
+  left: 6px;
+  color: var(--colorFg);
+  white-space: nowrap;
+  overflow: hidden;
+  /** Toggle for fade out long text */
+  -webkit-mask-image: -webkit-linear-gradient(180deg, transparent 0, #fff 16px);
+  -webkit-mask-position: top right;
+  /*  or clip with ... */
+  /*text-overflow: ellipsis;*/
+}
+/* Foreground (text) of active tab indicator */
+.tab-group:hover .tab-indicator.active:after {
+  color: var(--colorAccentFg);
+}
+/* Change active indicator colours */
+.tab-group:hover .tab-indicator:hover:before {
+  background: var(--colorHighlightBg);
+}
+.tab-group:hover .tab-indicator:hover:after {
+  color: var(--colorHighlightFg);
+}
+/* different tab positions */
+.tabs-right .tab-group:hover .tab-group-indicator,
+.tabs-left  .tab-group:hover .tab-group-indicator{
+  top: 36px !important;
+  bottom: unset !important;
+}
+.tabs-bottom .tab-group:hover .tab-group-indicator{
+  top: unset !important;
+  bottom: 30px !important;
+  border-top-left-radius: var(--radiusHalf);
+  border-top-right-radius: var(--radiusHalf);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 0 -2px 6px 0 rgba(0, 0, 0, 0.2);
+}
+.tabs-bottom .tab-group:hover .tab-group-indicator:before {
+  top: unset !important;
+  bottom: -30px;
+}
+/* Prevent side tabs z-index upsetting the
+ layering of the tab group indicators */
+.tabs-right .tab-position:hover,
+.tabs-left  .tab-position:hover {
+  z-index: 3 !important;
+}
+/* Popup Thumbs */
+#vivaldi-tooltip .tooltip .tooltip-item {
+  top: 0px;
+  width: calc(226px / 1.13); /* Default = 226px */
+  margin: 0 2px 10px 2px;
+  transition: 100ms ease;
+}
+#browser.animation-off ~ #vivaldi-tooltip .tooltip .tooltip-item {
+  transition-duration: 0s !important;
+}
+/* Smaller Thumbnails Default = 160px */
+#vivaldi-tooltip .tooltip .tooltip-item .thumbnail-image {
+  height: calc(160px / 2);
+}
+#vivaldi-tooltip .tooltip .tooltip-item.last-active {
+  top: 0px;
+  color: var(--colorAccentFg);
+  background-color: var(--colorAccentBgFaded);
+}
+#vivaldi-tooltip .tooltip .tab-group .tooltip-item:hover {
+  top: 10px;
+  background-color: var(--colorAccentBgFadedMost);
+  color: var(--colorFg);
+}
+.tabs-right ~ #vivaldi-tooltip .tooltip .tooltip-item{
+  width: 226px;
+}
+.tabs-bottom ~ #vivaldi-tooltip .tooltip .tab-group .tooltip-item:hover {
+  top: -10px;
+}
+
+
+
+/* Move tab audio icon */
+#browser.win #tabs-container .tab:not(.pinned):not(.tab-small).audio-on .favicon,
+#browser.win #tabs-container .tab:not(.pinned):not(.tab-small).audio-muted .favicon,
+#browser.win #tabs-container .tab:not(.pinned):not(.tab-small).tab-captured .favicon {
+    transform: scale(1);
+}
+#browser.win #tabs-container .tab.tab-small.audio-on .tab-audio,
+#browser.win #tabs-container .tab.pinned.audio-on .tab-audio,
+#browser.win #tabs-container .tab.tab-small.audio-muted .tab-audio,
+#browser.win #tabs-container .tab.pinned.audio-muted .tab-audio,
+#browser.win #tabs-container .tab.tab-small.tab-captured .tab-audio,
+#browser.win #tabs-container .tab.pinned.tab-captured .tab-audio {
+    left: 12px;
+    top: -2px;
+    margin-right: 0;
+}
+#browser.win #tabs-container .tab.tab-small.audio-on .tab-audio:hover,
+#browser.win #tabs-container .tab.pinned.audio-on .tab-audio:hover,
+#browser.win #tabs-container .tab.tab-small.audio-muted .tab-audio:hover,
+#browser.win #tabs-container .tab.pinned.audio-muted .tab-audio:hover,
+#browser.win #tabs-container .tab.tab-small.tab-captured .tab-audio:hover,
+#browser.win #tabs-container .tab.pinned.tab-captured .tab-audio:hover {
+    transform: scale(0.625);
+}
+#browser.win .tab-position .tab .tab-header span.tab-audio {
+    right: 0;
+}
+#browser.win .tab-position .tab:not(.button-off):hover .tab-header span.tab-audio {
+    right: 20px;
+}
+#browser.win .tab-position .tab:not(.button-off):not(.tab-small):not(.pinned).audio-on .tab-header .title,
+#browser.win .tab-position .tab:not(.button-off):not(.tab-small):not(.pinned).active.audio-on .tab-header .title,
+#browser.win .tab-position .tab:not(.button-off):not(.tab-small):not(.pinned).audio-muted .tab-header .title,
+#browser.win .tab-position .tab:not(.button-off):not(.tab-small):not(.pinned).active.audio-muted .tab-header .title,
+#browser.win .tab-position .tab:not(.button-off):not(.tab-small):not(.pinned).audio-on:hover .tab-header .title,
+#browser.win .tab-position .tab:not(.button-off):not(.tab-small):not(.pinned).audio-muted:hover .tab-header .title {
+    -webkit-mask-image: -webkit-linear-gradient(180deg, transparent 20px, #fff 30px);
+}
+#browser.win .tab-position .tab:not(.tab-small):not(.pinned).audio-on .tab-header .title,
+#browser.win .tab-position .tab:not(.tab-small):not(.pinned).active.audio-on .tab-header .title,
+#browser.win .tab-position .tab:not(.tab-small):not(.pinned).audio-muted .tab-header .title,
+#browser.win .tab-position .tab:not(.tab-small):not(.pinned).active.audio-muted .tab-header .title,
+#browser.win .tab-position .tab:not(.tab-small):not(.pinned).audio-on:hover .tab-header .title,
+#browser.win .tab-position .tab:not(.tab-small):not(.pinned).audio-muted:hover .tab-header .title {
+    -webkit-mask-image: -webkit-linear-gradient(180deg, transparent 20px, #fff 15px);
+}
+#browser.win .tab-audio .audioicon {
+    transform: scale(0.48);
+}
+#browser.win .tab-audio {
+    height: 18px;
+    width: 18px;
+    padding: 1px 2px 0;
+    border-radius: var(--radiusRounded);
+    opacity: 0.8;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 6px;
+}
+#app #browser.win .tab:not(.tab-small):not(.pinned) .tab-audio:hover {
+    opacity: 1;
+    transform: scale(1);
+    background-color: rgba(0, 0, 0, 0.2);
+}

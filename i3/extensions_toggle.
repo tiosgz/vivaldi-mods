@@ -1,0 +1,6 @@
+#browser.address-off #togglemod {
+    display: none;
+}
+#togglemod {
+    order: 1;
+}
