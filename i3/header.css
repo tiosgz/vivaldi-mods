@@ -25,28 +25,28 @@
 }*/
 
 
-#header { min-height: 25px !important; }
+/*#header { min-height: 25px !important; }
 .window-buttongroup { height: auto !important; }
 .window-buttongroup button { height: 25px !important; width: 46px !important; padding: auto !important; }
 #browser.win .window-buttongroup button.window-close:hover {
   /*background-color: #e3423e !important;*/
-  background-color: #e72525 !important;
+  /*background-color: #e72525 !important;
 }
 #browser .window-buttongroup button:hover {
   background-color: var(--colorBgLighter) !important;
-}
+}*/
 
-.win #tabs-container.top { padding-right: 150px !important; }
+/*.win #tabs-container.top { padding-right: 150px !important; }*/
 
-.window-buttongroup button:not(.window-close) {
+/*.window-buttongroup button:not(.window-close) {
   order: 1;
 }
 #browser.win .window-buttongroup {
   right: unset !important;
   left: 0;
   /* height: auto; */
-}
-.application-icon {
+/*}*/
+/*.application-icon {
   padding: 0 !important;
 }
 #titlebar button.vivaldi {
@@ -60,7 +60,7 @@
 #header #tabs-container {
   padding-right: 0 !important;
   padding-left: 180px !important;
-}
+}*/
 
 /* Disable header when there's only the menu button */
 #browser.native:not(.tabs-top):not(.horizontal-menu) #header {
