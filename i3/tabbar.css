@@ -8,6 +8,19 @@
 .tab-position .tab .favicon { background-color: transparent !important; }
 .tab-position .tab.active .tab-header .favicon { filter: none !important; }
 
+/* Save space */
+.tabs-top #tabs-container,
+.tabs-bottom #tabs-container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.tabs-top .vivaldi {
+    padding-top: 0;
+    height: 30px;
+}
+.tabs-top .vivaldi .application-icon {
+    margin-bottom: 5px;
+}
 
 /* Vertical scroll for bottom tab bar */
 /*.tabs-bottom #tabs-container.no-thumbs {
