@@ -80,3 +80,15 @@
 .panel#downloads > .download-editor {
   display: none;
 }*/
+
+/* 100% width panels for narrow windows */
+@media (max-width: 700px) {
+    #panels-container.overlay:not(.icons) .panel-group {
+        width: calc(100vw - 34px) !important;
+    }
+    #panels-container.overlay:not(.icons) .panel-collapse-guard {
+        min-width: 100% !important;
+        max-width: 100% !important;
+        width: 100%;
+    }
+}
