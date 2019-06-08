@@ -11,8 +11,8 @@
 /* Save space */
 .tabs-top #tabs-container,
 .tabs-bottom #tabs-container {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 .tabs-top .vivaldi {
     padding-top: 0;
