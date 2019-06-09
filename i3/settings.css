@@ -1,0 +1,18 @@
+.vivaldi-settings .settings-sidebar:not(:hover) {
+    width: 34px;
+}
+.vivaldi-settings .settings-sidebar:not(:hover) .settings-navigation-header {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.vivaldi-settings .settings-sidebar:not(:hover) .settings-navigation {
+    min-width: 100%;
+    width: 100%;
+}
+.vivaldi-settings .settings-sidebar:not(:hover) .settings-navigation .button-category {
+    padding-left: 0;
+    padding-right: 0;
+}
+.vivaldi-settings .settings-sidebar:not(:hover) .settings-navigation .button-category span svg {
+    margin-left: 0;
+}
