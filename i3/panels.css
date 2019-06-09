@@ -82,7 +82,7 @@
 }*/
 
 /* 100% width panels for narrow windows */
-@media (max-width: 700px) {
+/*@media (max-width: 700px) {*/
     #panels-container.overlay:not(.icons) .panel-group {
         width: calc(100vw - 34px) !important;
     }
@@ -91,7 +91,7 @@
         max-width: 100% !important;
         width: 100%;
     }
-}
+/*}*/
 
 /* Minimize panel when not used */
 /*#panels-container.icons:not(:hover) {
