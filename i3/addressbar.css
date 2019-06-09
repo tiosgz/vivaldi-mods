@@ -84,7 +84,7 @@ input.searchfield-input.vivaldi-searchfield {
     border-radius: 0;
     font-size: 12px;
 }
-.toolbar.toolbar-addressbar:not(:focus-within) .addressfield > :not(form) {
+.toolbar.toolbar-addressbar:not(:focus-within) .addressfield > :not(form):not(.SiteInfoButton) {
     display: none;
 }
 .toolbar.toolbar-addressbar:not(:focus-within) .addressfield > form {
@@ -93,6 +93,7 @@ input.searchfield-input.vivaldi-searchfield {
     padding: 0;
     margin: 0;
 }
-.toolbar.toolbar-addressbar:not(:focus-within) .addressfield > form * {
+.toolbar.toolbar-addressbar:not(:focus-within) .addressfield > form *,
+.toolbar.toolbar-addressbar:not(:focus-within) .addressfield > .SiteInfoButton {
     height: 100%;
 }
