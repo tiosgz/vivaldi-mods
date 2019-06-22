@@ -21,6 +21,16 @@
 .tabs-top .vivaldi .application-icon {
     margin-bottom: 5px;
 }
+.tabs-top .tab-group-indicator {
+    top: 0;
+}
+.tab-group .tab-header {
+    padding-top: calc(var(--padding) + 2px) !important;
+}
+.tab-indicator {
+    border-top-width: 0;
+    height: 7px;
+}
 
 /* Vertical scroll for bottom tab bar */
 /*.tabs-bottom #tabs-container.no-thumbs {

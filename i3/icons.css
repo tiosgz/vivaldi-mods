@@ -1,5 +1,5 @@
-.toolbar-addressbar .toolbar .button-toolbar[title="Go to homepage"] button svg path,
-.toolbar-addressbar .toolbar .button-toolbar button[title="Go to homepage"] svg path {
+.toolbar-large .button-toolbar[title="Go to homepage"] button svg path,
+.toolbar-large .button-toolbar button[title="Go to homepage"] svg path {
   /*M1014 1934C840 1804 713 1633 647 1440c-46 -135 -52 -177 -51 -350 0 -139 4 -179 23 -254 32 -124 72 -220 94 -224 15 -3 17 7 17 107 0 206 41 323 159 451l41 45 49 -53c120 -131 177 -358 151 -608 -13 -136 -40 -277 -76 -413 -40 -149 -19 -145 100 19 201 278 291 621 242 920 -28 170 -67 265 -212 515 -96 165 -99 174 -99 283 1 62 -3 92 -11 92 -6 0 -33 -16 -60 -36z*/
   /* 3 squares */ /*d: path('M25 7.813l-12.5-6.25-12.5 6.25 12.5 6.25 12.5-6.25zM12.5 3.637l8.351 4.176-8.351 4.176-8.351-4.176 8.351-4.176zM22.496 11.248l2.504 1.252-12.5 6.25-12.5-6.25 2.504-1.252 9.996 4.998zM22.496 15.936l2.504 1.252-12.5 6.25-12.5-6.25 2.504-1.252 9.996 4.998z');*/
   /* big BunsenLabs */ /*d: path('m 604.31156,-53.412979 c -21.7398,-44.604589 -14.15828,-108.821881 38.89221,-142.004201 -2.08604,6.10353 -1.4025,16.28152 1.56253,23.8817 8.13219,18.75762 24.28617,34.68283 30.20114,64.94532 C 683.15494,-64.234576 667.64657,-23.776751 640,8.0719589 653.85496,-36.992215 660.86195,-91.955723 627.6715,-118.95676 c -23.22975,20.835746 -24.11238,40.23574 -23.35994,65.543781 z');*/
@@ -61,12 +61,12 @@ button.history svg path {
 /*button.history svg rect {
   display: none;
 }*/
-.button-toolbar[title="Reload current page"] button svg path,
-.button-toolbar button[title="Reload current page"] svg path {
+.toolbar-large .button-toolbar[title="Reload current page"] button svg path,
+.toolbar-large .button-toolbar button[title="Reload current page"] svg path {
   d: path("M 4.8051075,12.752007 C 4.9616095,9.6188998 6.8053723,6.5162891 9.9437768,5.2746979 14.168552,3.6033253 19.053931,5.7190012 20.725304,9.9437763 22.396676,14.168551 20.281,19.053931 16.056225,20.725303 13.883484,21.584866 11.738591,21.456214 9.7170543,20.580762 L 11.185489,18.75127 3.4561349,18.869667 7.7599627,25.425641 8.6227394,23.107682 C 11.149659,24.201998 14.282768,24.358499 17.059048,23.260168 22.732318,21.015754 25.504583,14.614222 23.260169,8.9409529 21.015754,3.2676842 14.614222,0.49541735 8.9409529,2.739832 4.3540548,4.5544648 1.7329938,9.2209816 2.0288268,13.850338 Z");
 }
-.button-toolbar[title="Stop"] button svg path,
-.button-toolbar button[title="Stop"] svg path {
+.toolbar-large .button-toolbar[title="Stop"] button svg path,
+.toolbar-large .button-toolbar button[title="Stop"] svg path {
   d: path("M 23.439041,1.3939595 20.128745,4.7042559 C 19.305582,4.0028256 18.360183,3.4227985 17.301445,3.0039494 11.957879,0.88996991 5.9288141,3.4995455 3.8148344,8.8431079 2.3631285,12.512627 3.139906,16.507247 5.4994337,19.333567 L 1.3939595,23.439041 3.4751659,25.520247 7.6945174,21.300895 C 8.2984892,21.704171 8.9508599,22.053514 9.6539931,22.331682 12.268925,23.366183 15.219814,23.219074 17.599882,22.188354 L 18.412731,24.369693 22.467157,18.194794 15.18686,18.084843 16.569096,19.806746 C 14.665042,20.631323 12.64486,20.75379 10.598389,19.944184 10.234534,19.800238 9.8950691,19.621551 9.5656399,19.429773 L 20.162122,8.8332909 C 20.768676,9.9434019 21.134288,11.181999 21.196836,12.434171 L 23.812087,13.468884 C 23.959543,11.1614 23.331121,8.8467024 22.072512,6.9229004 L 25.520247,3.475166 Z M 13.311812,4.8534743 C 14.327379,4.8258582 15.362236,4.9978871 16.357049,5.3914466 17.078278,5.6767739 17.724249,6.0690939 18.294927,6.5380735 L 7.3450318,17.487969 C 5.6937454,15.36358 5.1532654,12.441224 6.2023317,9.7894678 7.3830134,6.805028 10.265111,4.9363229 13.311812,4.8534743 Z");
 }
 /*.application-icon svg path {
@@ -98,27 +98,27 @@ button.history svg path {
 }*/
 
 
-.toolbar-addressbar.toolbar .button-toolbar[title*="Rewind"] button svg path,
-.toolbar-addressbar.toolbar .button-toolbar button[title*="Rewind"] svg path {
+.toolbar-large .button-toolbar[title*="Rewind"] button svg path,
+.toolbar-large .button-toolbar button[title*="Rewind"] svg path {
   d: path('M0 7l8 -3.875, -3.5 3.5h12.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5v0.75l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-12.5l3.5 3.5, -8 -3.875zM0 19l8 -3.875, -3.5 3.5h12.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5v0.75l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-12.5l3.5 3.5, -8 -3.875z');
 }
-.button-toolbar[title*="Go to previous page"] button svg path,
-.button-toolbar button[title*="Go to previous page"] svg path {
+.toolbar-large .button-toolbar[title*="Go to previous page"] button svg path,
+.toolbar-large .button-toolbar button[title*="Go to previous page"] svg path {
   d: path('M0 13l8 -3.875, -3.5 3.5h12.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5v0.75l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-12.5l3.5 3.5, -8 -3.875z');
 }
-.button-toolbar.reload:not(.loading) svg path {
+.toolbar-large .button-toolbar.reload:not(.loading) svg path {
   /*d: path('');*/
 }
-.button-toolbar[title*="Go to next page"] button svg path,
-.button-toolbar button[title*="Go to next page"] svg path {
+.toolbar-large .button-toolbar[title*="Go to next page"] button svg path,
+.toolbar-large .button-toolbar button[title*="Go to next page"] svg path {
   d: path('M26 13l-8 -3.875, 3.5 3.5h-12.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5v0.75l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h12.5l-3.5 3.5, 8 -3.875z');
 }
-.toolbar-addressbar.toolbar .button-toolbar[title*="Fast Forward"] button svg path,
-.toolbar-addressbar.toolbar .button-toolbar button[title*="Fast Forward"] svg path {
+.toolbar-large .button-toolbar[title*="Fast Forward"] button svg path,
+.toolbar-large .button-toolbar button[title*="Fast Forward"] svg path {
   d: path('M26 7l-8 -3.875, 3.5 3.5h-12.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5v0.75l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h12.5l-3.5 3.5, 8 -3.875zM26 19l-8 -3.875, 3.5 3.5h-12.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5h-0.5l-3.5 -3.5h-0.5l3.5 3.5v0.75l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h0.5l-3.5 3.5h0.5l3.5 -3.5h12.5l-3.5 3.5, 8 -3.875z');
 }
-.toolbar-addressbar .toolbar .button-toolbar[title="Go to homepage"] button svg path,
-.toolbar-addressbar .toolbar .button-toolbar button[title="Go to homepage"] svg path {
+.toolbar-large .button-toolbar[title="Go to homepage"] button svg path,
+.toolbar-large .button-toolbar button[title="Go to homepage"] svg path {
   d: path('M6 6c1 2 1 12 0 14c2 -1 12 -1 14 0c-1 -2 -1 -12 0 -14c-2 1 -12 1 -14 0zm1 1c2 1 10 1 12 0c-1 2 -1 10 0 12c-2 -1 -10 -1 -12 0c1 -2 1 -10 0 -12zm12 0c14 1 -1 -14 0 0m0 12c-1 14 14 -1 0 0m-12 0c-14 -1 1 14 0 0m0 -12c1 -14 -14 1 0 0zm13 -1c-0.5 -9.5 9.5 0.5 0 0m0 14c9.5 -0.5 -0.5 9.5 0 0m-14 0c0.5 9.5 -9.5 -0.5 0 0m0 -14c-9.5 0.5 0.5 -9.5 0 0z');
 }
 /*.toolbar-addressbar.toolbar .button-toolbar.rewind, .toolbar-addressbar.toolbar .button-toolbar.next { min-width: 34px !important; }*/
