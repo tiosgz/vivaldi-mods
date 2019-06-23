@@ -11,17 +11,23 @@
 .notes-cardwrapper {
   backdrop-filter: blur(2px);
 }
-#tabs-container /*#main, /*.inner, /*.vivaldi-settings .settings-content, /*.startpage, .startpage .manager,*/ /*header*/ {
+#tabs-container /*#main, /*.inner,
+/*.vivaldi-settings .settings-content,
+/*.startpage, .startpage .manager,*/ /*header*/ {
   /*background: transparent !important;*/
   background: var(--colorBgAlphaHeavier) !important;
   background-color: var(--colorBgAlphaHeavier) !important;
 }
-.mosaic, .startpage, .startpage .manager, .vivaldi-settings .settings-content, .inner, #main, .panel-group, .notes-editor {
+.mosaic, .startpage, .startpage .manager,
+.vivaldi-settings .settings-content,
+.inner, #main, .panel-group, .notes-editor, .toolbar {
   background: transparent !important;
   /*background-image: none !important;*/
   background-color: transparent !important;
 }
-.tab.active, .toolbar-addressbar, #switch, .toolbar-statusbar, .vivaldi-settings, .vivaldi-settings .settings-sidebar, .startpage .manager > div,
+.tab.active, .toolbar-addressbar, #switch,
+.toolbar-statusbar, .vivaldi-settings,
+.vivaldi-settings .settings-sidebar, .startpage .manager > div,
 .addressfield, #header, .welcome-wrapper, .notes-cardwrapper,
 #browser.address-bottom:not(.color-behind-tabs-on) .toolbar-statusbar,
 #browser.address-bottom.color-behind-tabs-on .toolbar-statusbar {
@@ -34,7 +40,8 @@
 .private-intro, #notes-panel .no-notes {
   background: var(--colorBgAlphaHeavy);
 }
-.private .toolbar-addressbar .addressfield, .private .toolbar-addressbar .searchfield {
+.private .toolbar-addressbar .addressfield,
+.private .toolbar-addressbar .searchfield {
   border-color: var(--colorBgIntenser) !important;
   color: var(--colorFg) !important;
   fill: var(--colorFg) !important;
