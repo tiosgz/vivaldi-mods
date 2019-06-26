@@ -4,7 +4,7 @@
   backdrop-filter: blur(10px);
 }
 #browser.theme-dark {
-  background: url("chrome://vivaldi-data/local-image/d6cb4c13-0d5c-4150-929e-05e7b2dee70f");/*../resources/(old_)bg_alt_x.jpg*//*2,6,7*//*1,2,4,5*//*wallpapers/green-wallpaper-11-jpg*/
+  background: url("chrome://vivaldi-data/local-image/391d5ab9-f606-4d42-9a03-d8ee254cdf90");/*../resources/(old_)bg_alt_x.jpg*//*2,6,7*//*1,2,4,5*//*wallpapers/green-wallpaper-11-jpg*/
   background-size: cover;
   backdrop-filter: blur(10px);
 }
@@ -46,7 +46,24 @@
   color: var(--colorFg) !important;
   fill: var(--colorFg) !important;
 }
+/* Quick commands */
+.quick-command-container,
+input.quick-command-search-hint,
+.quick-commands {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+.quick-commands .quick-command[data-selected] {
+    background: var(--colorBgAlphaHeavy) !important;
+    background-color: var(--colorBgAlphaHeavy) !important;
+}
+.qc-modal > div {
+    background: var(--colorBgAlphaHeavy) !important;
+    background-color: var(--colorBgAlphaHeavy) !important;
+    backdrop-filter: blur(2px);
+}
 
+/* Add spacing around the web page */
 #webview-container {
     margin: 50px;
 }
