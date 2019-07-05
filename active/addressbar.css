@@ -68,3 +68,10 @@ input.searchfield-input.vivaldi-searchfield {
   border: none !important;
   background-color: var(--colorBg) !important;
 }
+
+.toolbar .profile-popup + .toolbar-extensions .button-toolbar:not(.button-narrow):first-of-type {
+  margin-left: 0;
+}
+.toolbar .profile-popup + .toolbar-extensions .button-toolbar:not(.button-narrow):first-of-type:before {
+  content: unset;
+}

@@ -97,3 +97,11 @@ input.searchfield-input.vivaldi-searchfield {
 .toolbar.toolbar-addressbar:not(:focus-within) .addressfield > .SiteInfoButton {
     height: 100%;
 }
+
+
+.toolbar .profile-popup + .toolbar-extensions .button-toolbar:not(.button-narrow):first-of-type {
+  margin-left: 0;
+}
+.toolbar .profile-popup + .toolbar-extensions .button-toolbar:not(.button-narrow):first-of-type:before {
+  content: unset;
+}
