@@ -12,7 +12,7 @@
 }*/
 .startpage .startpage-navigation .startpage-navigation-group { border: 0 !important; }
 /*.startpage .startpage-navigation:not(:hover) {
-  transform: translateY(calc((var(--toolbarHeight) * -1.5) + 3px));
+  transform: translateY(calc((34px * -1.5) + 3px));
   opacity: 0;
 }*/
 .speeddial .dial-columns .folder .thumbnail .folder-flap { display: none; }

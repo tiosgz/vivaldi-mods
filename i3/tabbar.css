@@ -25,7 +25,7 @@
     top: 0;
 }
 .tab-group .tab-header {
-    padding-top: calc(var(--padding) + 2px) !important;
+    padding-top: 8px !important;
 }
 .tab-indicator {
     border-top-width: 0;

@@ -1,7 +1,7 @@
 (function() {
 	setTimeout(function wait() {
 		if (document.querySelector('#switch')) {
-			let img = document.querySelector('#switch img[src="chrome://favicon/chrome://settings/siteData"]');
+			let img = document.querySelector('#switch img[src^="chrome://favicon/chrome://settings"]');
 			if (img) {
 				let btn = img.parentElement;
 				let span = document.createElement('span');

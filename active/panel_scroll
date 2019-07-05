@@ -11,8 +11,8 @@
 /* (selectors used in common.css select only buttons that are children (not children of children) of switch) */
 #switch #icons-container > button {
     flex: 0 0 auto;
-    width: var(--toolbarHeight);
-    height: calc(var(--toolbarHeight) + var(--padding) - 6px);
+    width: 34px;
+    height: 34px;
     border: 0;
     border-radius: 0;
     background-color: transparent;
