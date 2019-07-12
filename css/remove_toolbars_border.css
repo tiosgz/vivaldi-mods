@@ -1,0 +1,22 @@
+/* No border for addressbar */
+.address-bottom .toolbar-addressbar {
+	box-shadow: none !important;
+}
+.address-top .toolbar-mainbar:after,
+.address-top .toolbar-addressbar:after {
+	display: none !important;
+}
+
+/* No border for statusbar */
+.toolbar-statusbar {
+	border: none !important;
+}
+
+/* No border for panel */
+#switch {
+  box-shadow: none !important;
+}
+#switch > button.active {
+  border: none !important;
+}
+#panels-container:after { display: none; }

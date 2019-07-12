@@ -1,0 +1,16 @@
+/* Change colors of siteinfo */
+.SiteInfoButton.secure,
+.SiteInfoButton.secure:hover,
+.SiteInfoButton.secure:focus,
+.SiteInfoButton.secure:active,
+.SiteInfoButton.secure:focus:not([tabindex="-1"]),
+.SiteInfoButton.certified,
+.SiteInfoButton.certified:hover,
+.SiteInfoButton.certified:focus,
+.SiteInfoButton.certified:active,
+.SiteInfoButton.certified:focus:not([tabindex="-1"]) {
+  fill: currentColor;
+  color: var(--colorFgFadedMore); /* #55cc44e6 */
+  background-color: transparent;
+  border: none;
+}

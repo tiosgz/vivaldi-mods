@@ -1,0 +1,3 @@
+.tab-position .tab.pinned span.title::before {
+	content: "\00a0";
+}

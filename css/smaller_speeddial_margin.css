@@ -1,0 +1,10 @@
+/* Remove unnecessary vertical margin from speed dial */
+.startpage .startpage-folder-navigation {
+	margin: 0 0 10px 0 !important;
+}
+.sdwrapper .iconmenu-container.searchfield {
+	margin: 5px auto !important;
+}
+.speeddial {
+	margin-top: 10px;
+}

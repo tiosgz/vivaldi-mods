@@ -1,0 +1,17 @@
+path.bookmark-outline, clipPath#addBookmarkPath path {
+  d: path('M10.325 0.875c-1.472 0-2.738 1.197-3.325 2.447-0.587-1.25-1.854-2.447-3.325-2.447-2.029 0-3.675 1.647-3.675 3.675 0 4.127 4.163 5.209 7 9.289 2.682-4.055 7-5.294 7-9.289 0-2.029-1.647-3.675-3.675-3.675z');
+}
+button.button-on path.bookmark-outline {
+  fill: var(--colorFg)/*rgb(218, 93, 93)*/;
+}
+/*button.button-on:hover path.bookmark-outline {
+  fill: rgb(234, 64, 64);
+}*/
+.add-bookmark-shadow, .bookmark-animated-fill {
+  display: none;
+}
+button:not(.button-on) path.bookmark-outline {
+  fill: transparent !important;
+  stroke: var(--colorFg)!important;
+  stroke-width: 2px;
+}

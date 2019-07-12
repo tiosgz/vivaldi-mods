@@ -1,0 +1,3 @@
+#panels .panel-group .panel-collapse-guard .panel:not(.webpanel) header h1 {
+	display: none;
+}

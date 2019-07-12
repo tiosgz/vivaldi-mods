@@ -1,0 +1,32 @@
+/* Make top&bottom and left&right window borders the same color when tabs are at side */
+.address-bottom .toolbar-statusbar {
+	box-shadow: none !important;
+}
+.address-bottom.color-behind-tabs-off .toolbar-statusbar {
+	background-color: var(--colorAccentBg) !important;
+	color: var(--colorAccentFg) !important;
+	fill: var(--colorAccentFg) !important;
+}
+
+.color-behind-tabs-off:not(.tabs-top):not(.tabs-bottom):not(.tabs-off) #panels-container #panels #switch {
+	box-shadow: none !important;
+	background-color: var(--colorBg) !important;
+	color: var(--colorFg) !important;
+	fill: var(--colorFg) !important;
+}
+.color-behind-tabs-off:not(.tabs-top):not(.tabs-bottom):not(.tabs-off) #switch button.active {
+	background-color: var(--colorAccentBg) !important;
+	color: var(--colorAccentFg) !important;
+	fill: var(--colorAccentFg) !important;
+}
+.color-behind-tabs-on:not(.tabs-top):not(.tabs-bottom):not(.tabs-off) #panels-container #panels #switch {
+	box-shadow: none !important;
+	background-color: var(--colorAccentBg) !important;
+	color: var(--colorAccentFg) !important;
+	fill: var(--colorAccentFg) !important;
+}
+.color-behind-tabs-on:not(.tabs-top):not(.tabs-bottom):not(.tabs-off) #switch button.active {
+	background-color: var(--colorBg) !important;
+	color: var(--colorFg) !important;
+	fill: var(--colorFg) !important;
+}

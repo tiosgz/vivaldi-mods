@@ -1,0 +1,7 @@
+#notes-panel .notes-editor .notes-cardwrapper.cardview .meta-data-wrapper .dateCreated { display: none; }
+
+#notes-panel header { display: none; }
+#notes-panel .sortselector.sortselector-compact {
+  border-width: 0px/* 0px 1px 0px*/ !important;
+  background-color: var(--colorBgLight) !important;
+}

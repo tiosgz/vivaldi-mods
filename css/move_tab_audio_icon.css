@@ -1,0 +1,64 @@
+/* Move tab audio icon */
+#tabs-container .tab:not(.pinned):not(.tab-small).audio-on .favicon,
+#tabs-container .tab:not(.pinned):not(.tab-small).audio-muted .favicon,
+#tabs-container .tab:not(.pinned):not(.tab-small).tab-captured .favicon {
+    transform: scale(1);
+}
+#tabs-container .tab.tab-small.audio-on .tab-audio,
+#tabs-container .tab.pinned.audio-on .tab-audio,
+#tabs-container .tab.tab-small.audio-muted .tab-audio,
+#tabs-container .tab.pinned.audio-muted .tab-audio,
+#tabs-container .tab.tab-small.tab-captured .tab-audio,
+#tabs-container .tab.pinned.tab-captured .tab-audio {
+    left: 12px;
+    top: -2px;
+    margin-right: 0;
+}
+#tabs-container .tab.tab-small.audio-on .tab-audio:hover,
+#tabs-container .tab.pinned.audio-on .tab-audio:hover,
+#tabs-container .tab.tab-small.audio-muted .tab-audio:hover,
+#tabs-container .tab.pinned.audio-muted .tab-audio:hover,
+#tabs-container .tab.tab-small.tab-captured .tab-audio:hover,
+#tabs-container .tab.pinned.tab-captured .tab-audio:hover {
+    transform: scale(0.625);
+}
+.tab-position .tab .tab-header span.tab-audio {
+    right: 0;
+}
+.tab-position .tab:not(.button-off):hover .tab-header span.tab-audio {
+    right: 20px;
+}
+.tab-position .tab:not(.button-off):not(.tab-small):not(.pinned).audio-on .tab-header .title,
+.tab-position .tab:not(.button-off):not(.tab-small):not(.pinned).active.audio-on .tab-header .title,
+.tab-position .tab:not(.button-off):not(.tab-small):not(.pinned).audio-muted .tab-header .title,
+.tab-position .tab:not(.button-off):not(.tab-small):not(.pinned).active.audio-muted .tab-header .title,
+.tab-position .tab:not(.button-off):not(.tab-small):not(.pinned).audio-on:hover .tab-header .title,
+.tab-position .tab:not(.button-off):not(.tab-small):not(.pinned).audio-muted:hover .tab-header .title {
+    -webkit-mask-image: -webkit-linear-gradient(180deg, transparent 20px, #fff 30px);
+}
+.tab-position .tab:not(.tab-small):not(.pinned).audio-on .tab-header .title,
+.tab-position .tab:not(.tab-small):not(.pinned).active.audio-on .tab-header .title,
+.tab-position .tab:not(.tab-small):not(.pinned).audio-muted .tab-header .title,
+.tab-position .tab:not(.tab-small):not(.pinned).active.audio-muted .tab-header .title,
+.tab-position .tab:not(.tab-small):not(.pinned).audio-on:hover .tab-header .title,
+.tab-position .tab:not(.tab-small):not(.pinned).audio-muted:hover .tab-header .title {
+    -webkit-mask-image: -webkit-linear-gradient(180deg, transparent 20px, #fff 15px);
+}
+.tab-audio .audioicon {
+    transform: scale(0.48);
+}
+.tab-audio {
+    height: 18px;
+    width: 18px;
+    padding: 1px 2px 0;
+    border-radius: var(--radiusRounded);
+    opacity: 0.8;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 6px;
+}
+.tab:not(.tab-small):not(.pinned) .tab-audio:hover {
+    opacity: 1;
+    transform: scale(1);
+    background-color: rgba(0, 0, 0, 0.2);
+}

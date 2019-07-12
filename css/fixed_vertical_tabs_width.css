@@ -1,0 +1,7 @@
+#tabs-container.left, #tabs-container.right {
+	width: 60px !important;
+}
+#tabs-container.left button.fullheight.alternate,
+#tabs-container.right button.fullheight.alternate {
+	display: none;
+}

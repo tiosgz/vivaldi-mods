@@ -1,0 +1,8 @@
+/* No background color for panel and tab favicons */
+#switch button.webviewbtn img,
+.tab-position .tab .favicon {
+	background-color: transparent !important;
+}
+.tab-position .tab.active .tab-header .favicon {
+	filter: none !important;
+}

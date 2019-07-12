@@ -1,0 +1,4 @@
+/* Hide “Bookmarks” and “History” from start page navigation */
+.startpage .startpage-navigation .startpage-navigation-group:nth-of-type(2) {
+	display: none;
+}

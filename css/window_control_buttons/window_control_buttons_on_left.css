@@ -1,0 +1,19 @@
+.win .window-buttongroup button.window-close {
+	order: -1;
+}
+.win .window-buttongroup {
+	right: unset !important;
+	left: 0;
+}
+.win #titlebar button.vivaldi {
+	left: 140px !important;
+	right: unset !important;
+}
+.win #titlebar #pagetitle {
+	padding-left: 180px !important;
+	padding-right: 0 !important;
+}
+.win.tabs-top #tabs-container {
+	padding-right: 0 !important;
+	padding-left: 180px !important;
+}

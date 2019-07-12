@@ -1,0 +1,9 @@
+.startpage .startpage-content .sdwrapper::-webkit-scrollbar,
+.startpage .startpage-content .sdwrapper::-webkit-scrollbar-track,
+.startpage .startpage-content .sdwrapper::-webkit-scrollbar-thumb {
+  width: 10px;
+  border-radius: 50%;
+}
+.startpage .startpage-content .sdwrapper::-webkit-scrollbar-button {
+  display: none;
+}

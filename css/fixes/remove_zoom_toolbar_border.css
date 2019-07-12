@@ -1,0 +1,7 @@
+.page-zoom-controls,
+.page-zoom-controls .button-toolbar,
+.page-zoom-controls .button-toolbar button,
+.page-zoom-controls .button-toolbar-small,
+.page-zoom-controls .button-toolbar-small button {
+	border: none !important;
+}

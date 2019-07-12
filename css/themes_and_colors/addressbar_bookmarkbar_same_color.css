@@ -1,0 +1,9 @@
+/* Same colour for addressbar and bookmark bar */
+.color-behind-tabs-off .bookmark-bar, .color-behind-tabs-off .bookmark-bar button {
+  border: none !important;
+  background-color: var(--colorAccentBg) !important;
+}
+.color-behind-tabs-on .bookmark-bar, .color-behind-tabs-on .bookmark-bar button {
+  border: none !important;
+  background-color: var(--colorBg) !important;
+}

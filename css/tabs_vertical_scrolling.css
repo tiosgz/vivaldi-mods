@@ -1,0 +1,35 @@
+/* Vertical scroll for bottom tab bar */
+.tabs-bottom #tabs-container.no-thumbs {
+  height: 60px !important;
+}
+.tabs-bottom .tab-strip {
+  overflow: scroll;
+}
+.tab-strip::-webkit-scrollbar {
+  height: 0px;
+}
+.tab-strip::-webkit-scrollbar-button {
+  display: none;
+}
+.tab-strip::-webkit-scrollbar-track {
+  background-color: transparent !important;
+  border-width: 0 !important;
+}
+.tab-strip::-webkit-scrollbar-thumb {
+  background: var(--colorBorder) !important;
+  border-radius: var(--radius) !important;
+}
+.tabs-bottom .tab-position {
+  position: initial !important;
+  transform: none !important;
+  display: inline-flex;
+  width: 180px !important;
+}
+.tabs-bottom #tabs-container.view-thumbs .tab-position {
+  height: 100px !important;
+  max-height: 150px !important;
+}
+.tabs-bottom #tabs-container.no-thumbs .tab-position {
+  height: 30px !important;
+  max-height: 30px !important;
+}

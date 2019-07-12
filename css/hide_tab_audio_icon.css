@@ -1,0 +1,19 @@
+/* I haven't used this mod for a long time, maybe it doesn't work now */
+#tabs-container .tab.tab-small.audio-on .tab-audio,
+#tabs-container .tab.pinned.audio-on .tab-audio,
+#tabs-container .tab.tab-small.audio-muted .tab-audio,
+#tabs-container .tab.pinned.audio-muted .tab-audio,
+#tabs-container .tab.tab-small.tab-captured .tab-audio,
+#tabs-container .tab.pinned.tab-captured .tab-audio {
+    display: none;
+}
+#tabs-container .tab:not(.pinned):not(.tab-small).audio-on .tab-audio,
+#tabs-container .tab:not(.pinned):not(.tab-small).audio-muted .tab-audio,
+#tabs-container .tab:not(.pinned):not(.tab-small).tab-captured .tab-audio {
+    transform: scale(0) !important;
+}
+#tabs-container .tab:not(.pinned):not(.tab-small).audio-on .favicon,
+#tabs-container .tab:not(.pinned):not(.tab-small).audio-muted .favicon,
+#tabs-container .tab:not(.pinned):not(.tab-small).tab-captured .favicon {
+    transform: scale(1) !important;
+}

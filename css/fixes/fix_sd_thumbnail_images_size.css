@@ -1,0 +1,5 @@
+.startpage .thumbnail-image {
+	background-size: contain !important;
+	background-repeat: no-repeat;
+	background-position: center !important;
+}

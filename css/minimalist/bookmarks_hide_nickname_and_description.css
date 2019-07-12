@@ -1,0 +1,6 @@
+/* Hide nickname and description in bookmarks tree and nickname in the editor */
+.bookmark.manager .vivaldi-tree .tree-row label:nth-of-type(3),
+.bookmark.manager .sortselector.sortselector-tableheader label:nth-of-type(3),
+.bookmark.manager .vivaldi-tree .tree-row label:nth-of-type(4),
+.bookmark.manager .sortselector.sortselector-tableheader label:nth-of-type(4) { display: none; }
+.manager-editor .lower-half > div:nth-of-type(2) { display: none !important; }

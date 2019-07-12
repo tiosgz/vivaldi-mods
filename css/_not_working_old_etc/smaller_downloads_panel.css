@@ -1,0 +1,13 @@
+.panel#downloads {
+	height: 300px;
+	overflow-y: hidden; /* hide the info area part that is outside the panel */
+	/* move it to bottom */
+	position: absolute;
+	bottom: 0;
+}
+.panel#downloads > header {
+	display: none;
+}
+.panel#downloads > .download-editor {
+	display: none;
+}

@@ -1,0 +1,11 @@
+/* Make extensions toolbar feel differently */
+.toolbar-extensions div.button-narrow {
+  order: -1;
+}
+/* Remove the separator displayed left of first extension button */
+.toolbar .profile-popup + .toolbar-extensions .button-toolbar:not(.button-narrow):first-of-type {
+  margin-left: 0;
+}
+.toolbar .profile-popup + .toolbar-extensions .button-toolbar:not(.button-narrow):first-of-type:before {
+  content: unset;
+}

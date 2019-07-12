@@ -1,0 +1,16 @@
+.startpage .startpage-navigation {
+	box-shadow: none !important;
+	background: transparent !important;
+}
+.startpage .startpage-navigation .startpage-navigation-group {
+	border: 0 !important;
+}
+button.button-startpage {
+	box-shadow: none !important;
+}
+button.button-startpage:after,
+button.button-startpage:focus,
+button.button-startpage.active,
+button.button-startpage:active {
+	background: transparent !important;
+}

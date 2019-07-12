@@ -1,0 +1,12 @@
+/* Full-width panels */
+/* To have panels full-width only in narrow windows uncomment the “@media” line and the last closing brace */
+/*@media (max-width: 700px) {*/
+    #panels-container.overlay:not(.icons) .panel-group {
+        width: calc(100vw - 34px) !important;
+    }
+    #panels-container.overlay:not(.icons) .panel-collapse-guard {
+        min-width: 100% !important;
+        max-width: 100% !important;
+        width: 100%;
+    }
+/*}*/

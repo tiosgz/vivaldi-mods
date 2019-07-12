@@ -1,0 +1,19 @@
+.startpage .speeddial .thumbnail {
+	/* Use any of these (sorted from opaque to transparent):
+		- var(--colorBg)
+		- var(--colorFg)
+		- var(--colorBgAlpha)
+		- var(--colorBgAlphaHeavy)
+		- var(--colorBgAlphaHeavier)
+		- var(--colorFgAlpha)
+		- transparent */
+	background-color: var(--colorFgAlpha);
+}
+.startpage .thumbnail-image {
+	background-color: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+.dial-folder-icon {
+	background: transparent;
+}

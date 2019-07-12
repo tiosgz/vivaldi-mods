@@ -1,0 +1,7 @@
+/* startpage speed dial transparency */
+.dials.speeddial .thumbnail {
+    opacity: 0.6;
+}
+.dials.speeddial .thumbnail:hover {
+    opacity: 0.8;
+}

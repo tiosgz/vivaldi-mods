@@ -1,0 +1,4 @@
+.startpage .startpage-navigation:not(:hover) {
+	transform: translateY(calc((34px * -1.5) + 3px));
+	opacity: 0;
+}

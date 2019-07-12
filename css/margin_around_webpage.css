@@ -1,0 +1,7 @@
+/* Add spacing around the web page */
+#webview-container {
+    margin: 50px;
+}
+#webpage-stack {
+    border-radius: var(--radius);
+}

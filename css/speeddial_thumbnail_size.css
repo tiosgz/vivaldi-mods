@@ -1,0 +1,20 @@
+/* Use another speed dial thumbnail
+ size than is possible from settings */
+.speeddial .dial {
+	height: auto !important;
+	width: auto !important;
+}
+.speeddial .dial .thumbnail {
+	max-height: 120px !important;
+	height: 120px !important;
+	width: 147px !important;
+}
+.speeddial .dial .editable-title-container {
+	max-width: 147px;
+}
+.dials .dial .preview .thumbnail-image {
+	min-width: 45%;
+	min-height: 45%;
+	max-width: 45%;
+	max-height: 45%;
+}

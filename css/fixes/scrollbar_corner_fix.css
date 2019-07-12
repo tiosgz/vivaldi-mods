@@ -1,0 +1,5 @@
+/* Scrollbar Corner Fix */
+#browser:not(.mac) ::-webkit-scrollbar-corner {
+  background-color: var(--colorBg);
+  background-clip: padding-box;
+}

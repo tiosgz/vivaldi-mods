@@ -1,0 +1,7 @@
+/* Thinner extension toggle button */
+.toolbar-extensions .button-toolbar.button-narrow,
+.toolbar-extensions .button-toolbar.button-narrow button {
+  margin-left: 0 !important;
+  min-width: auto !important;
+  width: auto !important;
+}

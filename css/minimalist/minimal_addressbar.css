@@ -1,0 +1,28 @@
+/* Show only address when not focused-within */
+.toolbar.toolbar-addressbar:not(:focus-within) {
+    height: 20px;
+}
+.toolbar.toolbar-addressbar:not(:focus-within) > :not(.addressfield) {
+    display: none;
+}
+.toolbar.toolbar-addressbar:not(:focus-within) .addressfield {
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    font-size: 12px;
+}
+.toolbar.toolbar-addressbar:not(:focus-within) .addressfield > :not(form):not(.SiteInfoButton) {
+    display: none;
+}
+.toolbar.toolbar-addressbar:not(:focus-within) .addressfield > form {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.toolbar.toolbar-addressbar:not(:focus-within) .addressfield > form *,
+.toolbar.toolbar-addressbar:not(:focus-within) .addressfield > .SiteInfoButton {
+    height: 100%;
+}

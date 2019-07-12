@@ -1,0 +1,47 @@
+.win .window-buttongroup {
+	right: 0 !important;
+}
+.win .window-buttongroup button.window-close {
+	background: transparent !important;
+	fill: inherit !important;
+}
+.win .window-buttongroup button.window-close:active {
+	background-color: #973d3c !important;
+	fill: #fff !important;
+}
+.win .window-buttongroup button.window-close:hover {
+	background-color: #c94f4d !important;
+	fill: #fff !important;
+}
+.win #header {
+	min-height: 25px !important;
+}
+.win .window-buttongroup {
+	height: auto !important;
+}
+.win .window-buttongroup button {
+	height: 25px !important;
+	width: 46px !important;
+	padding: 0 !important;
+}
+.win .window-buttongroup button.window-close:hover {
+	/*background-color: #c94f4d !important;*/
+	/*background-color: #e3423e !important;*/
+	background-color: #e72525 !important;
+}
+.win .window-buttongroup button:hover {
+	background-color: var(--colorBgLighter) !important;
+}
+/* Change the icons */
+.window-buttongroup .window-minimize svg path {
+	d: path('M0 5h10v1h-10v-1z');
+}
+.window-buttongroup .window-maximize svg .window-maximize-glyph path {
+	d: path("M0 0h10v10h-1v-9H0V0zM0 1h1v8h8v1H0V1z");/*M0 0h10v10h-1v-9H0V0zM0 1h1v8h8v1H0V1z*/
+}
+.window-buttongroup .window-maximize svg .window-restore-glyph path {
+	d: path("M0 2h8v8h-1v-7h-7v-1zm2 -2h8v8h-2v-1h1v-6h-6v1h-1v-2zM0 3h1v6h6v1H0V3z");/*M0 3h7v7h-1v-6H0V3zM0 4h1v5h6v1H0V4zM2 0h8v8h-2v-1h1V1H3v2h-1V0z*//*M0 3h7v7h-1v-6H0V3zM0 4h1v5h6v1H0V4zM2 0h8v8h-2v-1h1V1H3v2h-1V0z*/
+}
+.window-buttongroup .window-close svg path {
+	d: path("M0 0h1l9 9v1h-1l-9 -9v-1zM10 0v1l-9 9h-1v-1l9 -9h1z");
+}

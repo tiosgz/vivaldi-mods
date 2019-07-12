@@ -1,0 +1,4 @@
+/* Hide an extension icon (use extension ID instead of pkehgijcmpdhfbdbbnkijodmdjhbjlgp) */
+.toolbar-extensions div.pkehgijcmpdhfbdbbnkijodmdjhbjlgp {
+  display: none;
+}

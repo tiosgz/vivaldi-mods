@@ -1,0 +1,4 @@
+/* Do not zoom speed dial thumbnails on hover */
+.dials .dial:not(.dragging):hover .thumbnail-image {
+	transform: none !important;
+}

@@ -1,0 +1,33 @@
+#panels-container #switch #icons-container {
+    max-height: calc(100% - 68px);
+    height: auto;
+    width: auto;
+    overflow: scroll;
+}
+#panels-container #switch #icons-container::-webkit-scrollbar {
+    display: none;
+}
+/* Fix buttons' styling */
+/* (selectors used in common.css select only buttons that are children (not children of children) of switch) */
+#switch #icons-container > button {
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    color: var(--colorFgFaded);
+    fill: var(--colorFgFaded);
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+#switch #icons-container > button svg {
+    width: 26px;
+    height: auto;
+    transition: transform 0.2s;
+}
