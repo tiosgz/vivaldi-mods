@@ -1,33 +1,36 @@
-#panels-container #switch #icons-container {
-    max-height: calc(100% - 68px);
-    height: auto;
-    width: auto;
-    overflow: scroll;
+/* Allows you to vertically scroll panel and use more panels than fit in the switch */
+#panels-container #switch {
+  overflow: scroll;
 }
-#panels-container #switch #icons-container::-webkit-scrollbar {
+#panels-container #switch::-webkit-scrollbar {
+  display: none;
+}
+#panels-container #switch .addwebpanel-wrapper {
+  order: -1;
+  overflow: visible;
+}
+.addwebpanel-wrapper .addwebpanelcallout {
+    min-height: 0;
+    height: 64px;
+    min-width: 34px;
+    width: 34px;
+    padding: 0;
+    position: unset;
+}
+.addwebpanel-wrapper .webpanel-suggestions {
     display: none;
 }
-/* Fix buttons' styling */
-/* (selectors used in common.css select only buttons that are children (not children of children) of switch) */
-#switch #icons-container > button {
-    flex: 0 0 auto;
+.addwebpanel-wrapper .addwebpanelcallout form header {
+    display: none;
+}
+.addwebpanel-wrapper button.add {
+    margin: 6px auto 0 auto;
+}
+.addwebpanel-wrapper .addwebpanelcallout form .urlfield > input {
     width: 34px;
-    height: 34px;
-    border: 0;
-    border-radius: 0;
-    background-color: transparent;
-    box-shadow: none;
-    position: relative;
     padding-left: 0;
     padding-right: 0;
-    padding-bottom: 0;
-    color: var(--colorFgFaded);
-    fill: var(--colorFgFaded);
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid transparent;
 }
-#switch #icons-container > button svg {
-    width: 26px;
-    height: auto;
-    transition: transform 0.2s;
+.addwebpanel-wrapper .addwebpanelcallout form .webpanel-input {
+    flex-direction: column;
 }
