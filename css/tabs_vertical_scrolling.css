@@ -24,6 +24,7 @@
   transform: none !important;
   display: inline-flex;
   width: 180px !important;
+  vertical-align: top;
 }
 .tabs-bottom #tabs-container.view-thumbs .tab-position {
   height: 100px !important;
