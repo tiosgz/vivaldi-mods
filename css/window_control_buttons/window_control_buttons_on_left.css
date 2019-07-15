@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .win .window-buttongroup button.window-close {
 	order: -1;
 }

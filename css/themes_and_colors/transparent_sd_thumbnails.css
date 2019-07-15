@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .startpage .speeddial .thumbnail {
 	/* Use any of these (sorted from opaque to transparent):
 		- var(--colorBg)

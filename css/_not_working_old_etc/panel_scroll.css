@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 #panels-container #switch #icons-container {
     max-height: calc(100% - 68px);
     height: auto;

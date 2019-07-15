@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* No background color for panel and tab favicons */
 #switch button.webviewbtn img,
 .tab-position .tab .favicon {

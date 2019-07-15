@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* Make extensions toolbar feel differently */
 .toolbar-extensions div.button-narrow {
   order: -1;

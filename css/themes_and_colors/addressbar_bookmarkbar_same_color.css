@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* Same colour for addressbar and bookmark bar */
 .color-behind-tabs-off .bookmark-bar, .color-behind-tabs-off .bookmark-bar button {
   border: none !important;

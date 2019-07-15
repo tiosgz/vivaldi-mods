@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* Allows you to vertically scroll panel and use more panels than fit in the switch */
 #panels-container #switch {
   overflow: scroll;

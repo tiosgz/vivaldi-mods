@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* Disable header when there's only the menu button */
 #browser.native:not(.tabs-top):not(.horizontal-menu) #header {
     display: none !important;

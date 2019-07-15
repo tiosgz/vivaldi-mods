@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .tab-position .tab .progress-indicator {
 	background-color: var(--colorBorderHighlight) !important;
 }

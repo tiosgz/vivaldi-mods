@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* swiss flag in panel */
 #switch::before {
     content:"";

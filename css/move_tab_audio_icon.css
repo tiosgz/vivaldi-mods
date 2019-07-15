@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* Move tab audio icon */
 #tabs-container .tab:not(.pinned):not(.tab-small).audio-on .favicon,
 #tabs-container .tab:not(.pinned):not(.tab-small).audio-muted .favicon,

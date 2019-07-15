@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* Add spacing around the web page */
 #webview-container {
     margin: 50px;

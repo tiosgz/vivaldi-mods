@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 #tabs-container.left, #tabs-container.right {
 	width: 60px !important;
 }

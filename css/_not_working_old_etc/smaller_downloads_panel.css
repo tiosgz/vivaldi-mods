@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .panel#downloads {
 	height: 300px;
 	overflow-y: hidden; /* hide the info area part that is outside the panel */

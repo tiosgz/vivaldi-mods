@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* Scrollbar Corner Fix */
 #browser:not(.mac) ::-webkit-scrollbar-corner {
   background-color: var(--colorBg);

@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 #browser.theme-light {
   background: url("../resources/old_bg_alt_4.jpg");/*0,3,4,7*//*1,4,5*/
   background-size: cover;

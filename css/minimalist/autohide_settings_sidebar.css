@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .vivaldi-settings .settings-sidebar:not(:hover) {
     width: 34px;
 }

@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* Remove unnecessary vertical margin from speed dial */
 .startpage .startpage-folder-navigation {
 	margin: 0 0 10px 0 !important;

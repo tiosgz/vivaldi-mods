@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .toggle-trash svg path:first-of-type {
   d: path('M 6 8 h14 v2 h-14 Z M 6 12 h14 v2 h-14 Z M 9 16 h8 v2 h-8 Z');
 }

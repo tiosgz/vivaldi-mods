@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* Show only address when not focused-within */
 .toolbar.toolbar-addressbar:not(:focus-within) {
     height: 20px;

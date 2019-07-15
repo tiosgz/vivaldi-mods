@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* Display siteinfo text only on hover */
 .SiteInfoButton:not(:hover) .siteinfo-text {
   display: none;

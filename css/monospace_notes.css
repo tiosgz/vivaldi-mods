@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 #notes-panel .notes-editor .notes-cardwrapper.cardview textarea.note.editor,
 #notes-panel .notes-editor .notes-cardwrapper.cardview div.note.md {
   font-family: 'Hack', monospace !important;

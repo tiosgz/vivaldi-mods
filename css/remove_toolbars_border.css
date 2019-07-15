@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* No border for addressbar */
 .address-bottom .toolbar-addressbar {
 	box-shadow: none !important;

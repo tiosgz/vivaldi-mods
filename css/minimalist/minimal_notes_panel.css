@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 #notes-panel .notes-editor .notes-cardwrapper.cardview .meta-data-wrapper .dateCreated { display: none; }
 
 #notes-panel header { display: none; }
