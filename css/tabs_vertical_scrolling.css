@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* Vertical scroll for bottom tab bar */
-.tabs-bottom #tabs-container.no-thumbs {
+#tabs-container.no-thumbs.bottom {
   height: 60px !important;
 }
 .tabs-bottom .tab-strip {
@@ -28,11 +28,14 @@
   width: 180px !important;
   vertical-align: top;
 }
-.tabs-bottom #tabs-container.view-thumbs .tab-position {
+#tabs-container.view-thumbs.bottom .tab-position {
   height: 100px !important;
   max-height: 150px !important;
 }
-.tabs-bottom #tabs-container.no-thumbs .tab-position {
+#tabs-container.no-thumbs.bottom .tab-position {
   height: 30px !important;
   max-height: 30px !important;
+}
+#tabs-container.bottom .tab.tab-small.tab-mini .tab-header .title {
+  display: flex;
 }
