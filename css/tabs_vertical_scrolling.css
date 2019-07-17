@@ -39,3 +39,8 @@
 #tabs-container.bottom .tab.tab-small.tab-mini .tab-header .title {
   display: flex;
 }
+#tabs-container.bottom .tab.tab-small.tab-mini .tab-header {
+  padding-left: 6px;
+  border-left-width: 0;
+  border-right-width: 0;
+}
