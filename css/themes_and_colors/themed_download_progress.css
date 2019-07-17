@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .panel#downloads .tree-row[data-selected][data-nofocus] .DownloadItem-ProgressBar {
     background-color: var(--colorBgLighter);
 }
