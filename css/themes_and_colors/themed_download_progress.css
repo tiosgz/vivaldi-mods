@@ -1,0 +1,14 @@
+.panel#downloads .tree-row[data-selected][data-nofocus] .DownloadItem-ProgressBar {
+    background-color: var(--colorBgLighter);
+}
+
+.panel#downloads .DownloadItem-ProgressBar {
+    background-color: var(--colorBgDarker);
+}
+
+.panel#downloads .DownloadItem-ProgressBar .value {
+    background-color: var(--colorFgIntense);
+    background-image: linear-gradient(to right, var(--colorFg) 0%, var(--colorFgFadedMore) 50%, var(--colorFg) 98%);
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    box-shadow: inset 0 -3px 1px 0 var(--colorBgAlphaHeavier);
+}
