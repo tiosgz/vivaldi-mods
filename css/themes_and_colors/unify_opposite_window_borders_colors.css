@@ -32,3 +32,16 @@
 	color: var(--colorFg) !important;
 	fill: var(--colorFg) !important;
 }
+
+/* Fix download progress */
+.color-behind-tabs-off:not(.tabs-top):not(.tabs-bottom):not(.tabs-off) button.downloads.active.in-progress div.progress {
+    background-color: var(--colorAccentFgFaded) !important;
+}
+
+.color-behind-tabs-off:not(.tabs-top):not(.tabs-bottom):not(.tabs-off) button.downloads.active div.progress {
+    border-color: var(--colorAccentFg) !important;
+}
+
+.color-behind-tabs-off:not(.tabs-top):not(.tabs-bottom):not(.tabs-off) button.downloads.active.in-progress div.progress div.loaded {
+    background-color: var(--colorAccentFg) !important;
+}
