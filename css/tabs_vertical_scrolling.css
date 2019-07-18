@@ -2,7 +2,8 @@
 
 /* Vertical scroll for bottom tab bar */
 #tabs-container.no-thumbs.bottom {
-  height: 60px !important;
+  height: 61px !important;
+  padding-bottom: 0 !important;
 }
 .tabs-bottom .tab-strip {
   overflow: scroll;
