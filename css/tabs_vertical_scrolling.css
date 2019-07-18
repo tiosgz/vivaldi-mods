@@ -2,7 +2,7 @@
 
 /* Vertical scroll for bottom tab bar */
 #tabs-container.no-thumbs.bottom {
-  height: 61px !important;
+  height: 64px !important;
   padding-bottom: 0 !important;
 }
 .tabs-bottom .tab-strip {
