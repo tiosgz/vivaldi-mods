@@ -28,11 +28,12 @@
 .addwebpanel-wrapper button.add {
     margin: 6px auto 0 auto;
 }
-.addwebpanel-wrapper .addwebpanelcallout form .urlfield > input {
+.addwebpanel-wrapper .addwebpanelcallout form .UrlField > input {
     width: 34px;
     padding-left: 0;
     padding-right: 0;
 }
 .addwebpanel-wrapper .addwebpanelcallout form .webpanel-input {
+    display: flex;
     flex-direction: column;
 }
