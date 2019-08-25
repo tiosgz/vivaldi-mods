@@ -1,15 +1,15 @@
 @charset "UTF-8";
 
-#browser.theme-light {
+/*#browser.theme-light {
   background: url("../resources/old_bg_alt_4.jpg");/*0,3,4,7*//*1,4,5*/
-  background-size: cover;
+  /*background-size: cover;
   backdrop-filter: blur(10px);
 }
 #browser.theme-dark {
   background: url("chrome://vivaldi-data/local-image/391d5ab9-f606-4d42-9a03-d8ee254cdf90");/*../resources/(old_)bg_alt_x.jpg*//*2,6,7*//*1,2,4,5*//*wallpapers/green-wallpaper-11-jpg*/
-  background-size: cover;
+  /*background-size: cover;
   backdrop-filter: blur(10px);
-}
+}*/
 .notes-cardwrapper {
   backdrop-filter: blur(2px);
 }
