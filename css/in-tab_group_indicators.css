@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+/* This moves tab stack indicators inside tabs instead of below them (when tabs are at bottom) */
+.tabs-bottom .tab-position .tab-group-indicator {
+    bottom: 0;
+}
+.tabs-bottom .tab-position .tab-group-indicator .tab-indicator {
+    border-bottom: none;
+    height: 6px;
+}
