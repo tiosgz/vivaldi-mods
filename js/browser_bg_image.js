@@ -34,13 +34,13 @@ setTimeout(function wait() {
                                 vivaldi.prefs.get('vivaldi.startpage.image.stretch', function(stretch_img) {
                                     if (stretch_img === null) stretch_img = true;
 
-                                    var bg_img = '';
+                                    var final_img_path = 'url(\'' + (img_path === 'user_defined' ? custom_img : img_path) + '\')';
+                                    var bg_img = show_img ? 'var(--startpageBgForcedImage)' : 'none';
                                     var bg_clr = '';
-                                    if (show_img)
-                                        bg_img = img_path === 'user_defined' ? 'url(\'' + custom_img + '\')' : 'url(\'' + img_path + '\')';
                                     bg_clr = bg_color === 'user_defined' ? custom_bg_color : bg_color;
                                     if (bg_clr == '') bg_clr = 'var(--colorBg)';
                                     body.style.setProperty('--startpageBgImage', bg_img);
+                                    body.style.setProperty('--startpageBgForcedImage', final_img_path);
                                     body.style.setProperty('--startpageBgColor', bg_clr);
                                     body.style.setProperty('--startpageBgRepeat', tile_img ? 'repeat' : 'no-repeat');
                                     body.style.setProperty('--startpageBgSize', stretch_img ? 'cover' : 'auto');
@@ -50,6 +50,61 @@ setTimeout(function wait() {
                     });
                 });
             });
+        });
+        vivaldi.prefs.onChanged.addListener(function (pref) {
+            path = pref.path;
+            value = pref.value;
+            switch (path) {
+                case 'vivaldi.startpage.background.color':
+                    if (!value) value = '#cccccc';
+                    if (value === 'user_defined')
+                        vivaldi.prefs.get('vivaldi.startpage.background.color_custom', function (custom_color) {
+                            if (!custom_color) custom_color = '#bfb8b0';
+                            body.style.setProperty('--startpageBgColor', custom_color);
+                        });
+                    else
+                        body.style.setProperty('--startpageBgColor', value);
+                    break;
+                case 'vivaldi.startpage.background.color_custom':
+                    if (!value) value = '#bfb8b0';
+                    vivaldi.prefs.get('vivaldi.startpage.background.color', function (color) {
+                        if (color === 'user_defined')
+                            body.style.setProperty('--startpageBgColor', value);
+                    });
+                    break;
+                case 'vivaldi.startpage.image.enable':
+                    if (value === null) value = true;
+                    body.style.setProperty('--startpageBgImage', value ? 'var(--startpageBgForcedImage)' : 'none');
+                    break;
+                case 'vivaldi.startpage.image.path':
+                    if (!value) value = './../resources/bg.jpg';
+                    if (value.startsWith('./../') || value.startsWith('../')) value = value.slice(3);
+                    if (value === 'user_defined')
+                        vivaldi.prefs.get('vivaldi.startpage.image.path_custom', function(cust_path) {
+                            if (!cust_path) cust_path = './../resources/bg.jpg';
+                            if (cust_path.startsWith('./../') || cust_path.startsWith('../')) cust_path = cust_path.slice(3);
+                            body.style.setProperty('--startpageBgForcedImage', 'url(\'' + cust_path + '\')');
+                        });
+                    else
+                        body.style.setProperty('--startpageBgForcedImage', 'url(\'' + value + '\')');
+                    break;
+                case 'vivaldi.startpage.image.path_custom':
+                    if (!value) value = './../resources/bg.jpg';
+                    if (value.startsWith('./../') || value.startsWith('../')) value = value.slice(3);
+                    vivaldi.prefs.get('vivaldi.startpage.image.path', function (path) {
+                        if (path === 'user_defined')
+                            body.style.setProperty('--startpageBgForcedImage', 'url(\'' + value + '\')');
+                    });
+                    break;
+                case 'vivaldi.startpage.image.repeat':
+                    if (value === null) value = false;
+                    body.style.setProperty('--startpageBgRepeat', value ? 'repeat' : 'no-repeat');
+                    break;
+                case 'vivaldi.startpage.image.stretch':
+                    if (value === null) value = true;
+                    body.style.setProperty('--startpageBgSize', value ? 'cover' : 'auto');
+                    break;
+            }
         });
     }
     else setTimeout(wait, 200);
