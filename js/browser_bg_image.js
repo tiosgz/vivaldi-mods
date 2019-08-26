@@ -11,7 +11,7 @@ setTimeout(function wait() {
                 background-repeat: var(--startpageBgRepeat);
             }
             #browser {
-                backdrop-filter: blur(3px);
+                /*backdrop-filter: blur(3px);*/
                 background: transparent !important;
                 background-color: transparent !important;
             }
