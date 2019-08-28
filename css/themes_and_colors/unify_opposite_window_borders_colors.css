@@ -32,6 +32,10 @@
 	color: var(--colorFg) !important;
 	fill: var(--colorFg) !important;
 }
+#browser:not(.tabs-top):not(.tabs-bottom):not(.tabs-off) #switch button:not(.active):not(:hover):not(:focus) {
+	color: inherit !important;
+	fill: inherit !important;
+}
 
 /* Fix download progress */
 .color-behind-tabs-off:not(.tabs-top):not(.tabs-bottom):not(.tabs-off) button.downloads.active.in-progress div.progress {
