@@ -2,21 +2,21 @@ setTimeout(function wait() {
     var body = document.body;
     var head = document.head;
     if(body && head) {
-        var style = document.createElement('style');
-        style.innerHTML = `
-            #app {
-                background-image: var(--startpageBgImage);
-                background-color: var(--startpageBgColor);
-                background-size: var(--startpageBgSize);
-                background-repeat: var(--startpageBgRepeat);
-            }
-            #browser {
-                /*backdrop-filter: blur(3px);*/
-                background: transparent !important;
-                background-color: transparent !important;
-            }
-        `;
-        head.appendChild(style);
+        // var style = document.createElement('style');
+        // style.innerHTML = `
+        //     #app {
+        //         background-image: var(--startpageBgImage);
+        //         background-color: var(--startpageBgColor);
+        //         background-size: var(--startpageBgSize);
+        //         background-repeat: var(--startpageBgRepeat);
+        //     }
+        //     #browser {
+        //         /*backdrop-filter: blur(3px);*/
+        //         background: transparent !important;
+        //         background-color: transparent !important;
+        //     }
+        // `;
+        // head.appendChild(style);
         vivaldi.prefs.get('vivaldi.startpage.background.color', function(bg_color) {
             if (!bg_color) bg_color = '#cccccc';
             vivaldi.prefs.get('vivaldi.startpage.background.color_custom', function(custom_bg_color) {
