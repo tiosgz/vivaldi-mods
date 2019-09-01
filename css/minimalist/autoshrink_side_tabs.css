@@ -15,10 +15,10 @@
 #tabs-container.right {
     right: 0;
 }
-#panels-container.right ~ #tabs-container.right {
+#panels-container.right:not([style="width: 0px;"]) ~ #tabs-container.right {
     right: 34px;
 }
-#panels-container.left ~ #tabs-container.left {
+#panels-container.left:not([style="width: 0px;"]) ~ #tabs-container.left {
     left: 34px;
 }
 
