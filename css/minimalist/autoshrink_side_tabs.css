@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+#tabs-container.left:not(:hover),
+#tabs-container.right:not(:hover) {
+    width: 30px !important;
+}
+#tabs-container.left, #tabs-container.right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+#tabs-container.left {
+    left: 0;
+}
+#tabs-container.right {
+    right: 0;
+}
+#panels-container.right ~ #tabs-container.right {
+    right: 34px;
+}
+#panels-container.left ~ #tabs-container.left {
+    left: 34px;
+}
+
+#browser.tabs-left #webview-container {
+    margin-left: 30px;
+}
+#browser.tabs-right #webview-container {
+    margin-right: 30px;
+}
