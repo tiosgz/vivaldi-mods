@@ -28,3 +28,8 @@
 #browser.tabs-right #webview-container {
     margin-right: 30px;
 }
+
+#tabs-container.left .tab-strip::-webkit-scrollbar,
+#tabs-container.right .tab-strip::-webkit-scrollbar {
+    width: 5px;
+}
