@@ -25,3 +25,10 @@
    — I removed them since we have
    the choice of thumbnails size */
 }
+.dials .dial .editable-title-container {
+    position: unset;
+}
+/* Uncomment in case you use custom size (few lines above) */
+/*.speeddial .dial {
+    display: inline-flex;
+}*/

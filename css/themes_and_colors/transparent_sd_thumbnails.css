@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.startpage .speeddial .thumbnail {
+.startpage .speeddial .thumbnail-image {
 	/* Use any of these (sorted from opaque to transparent):
 		- var(--colorBg)
 		- var(--colorFg)
@@ -9,11 +9,9 @@
 		- var(--colorBgAlphaHeavier)
 		- var(--colorFgAlpha)
 		- transparent */
+	background: transparent;
 	background-color: var(--colorFgAlpha);
-}
-.startpage .thumbnail-image {
-	background-color: transparent !important;
-	border: none !important;
+	border: none;
 	box-shadow: none !important;
 }
 .dial-folder-icon {

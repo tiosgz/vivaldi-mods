@@ -4,4 +4,10 @@
 	background-size: contain !important;
 	background-repeat: no-repeat;
 	background-position: center !important;
+    /* The part below should be the only needed since 2.8.1662.4 */
+    height: 100%;
+    width: 100%;
+}
+.startpage .thumbnail-image img {
+    object-fit: contain;
 }
