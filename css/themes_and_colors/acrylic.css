@@ -59,6 +59,10 @@
   color: var(--colorFg) !important;
   fill: var(--colorFg) !important;
 }
+/* Make also tiled startpage transparent */
+.webpageview.internal .devtools-container .webpage {
+    visibility: hidden;
+}
 /* Quick commands */
 .quick-command-container,
 input.quick-command-search-hint,
