@@ -23,32 +23,45 @@
         let extBtnSelector = '.button-toolbar:not(.button-narrow).button-temporarily-visible';
 
         function makePopup() {
-            let popup = document.createElement('div');
-            popup.classList.add('mod-extensions-buttons-popup', 'toolbar', 'toolbar-mainbar', 'toolbar-large');
-            let extButtons = extBar.querySelectorAll(extBtnSelector);
-            extButtons.forEach(function(button) {
-                button.parentElement.removeChild(button);
-                popup.appendChild(button);
+            vivaldi.prefs.get('vivaldi.address_bar.extensions.visible', (hideExts) => {
+                if (!hideExts) {
+                    let popup = document.createElement('div');
+                    popup.classList.add('mod-extensions-buttons-popup', 'toolbar', 'toolbar-mainbar', 'toolbar-large');
+                    let extButtons = extBar.querySelectorAll(extBtnSelector);
+                    extButtons.forEach(function(button) {
+                        button.parentElement.removeChild(button);
+                        popup.appendChild(button);
+                    });
+                    extBar.appendChild(popup);
+                } else {
+                    removePopup();
+                }
             });
-            extBar.appendChild(popup);
+        }
+
+        function removePopup() {
+            let popup = extBar.querySelector('.mod-extensions-buttons-popup');
+            if (popup)
+                popup.parentElement.removeChild(popup);
         }
 
         function checkChange(pref) {
             if (pref.path === 'vivaldi.address_bar.extensions.visible'){
-                // I don't know why, but they are visible when it's false :-P
-                if (pref.value === false) {
-                    // In fact they are shown
-                    makePopup();
-                } else {
-                    let popup = extBar.querySelector('.mod-extensions-buttons-popup');
-                    if (popup)
-                        popup.parentElement.removeChild(popup);
-                }
+                makePopup();
             } else if (pref.path === 'vivaldi.address_bar.extensions.show_toggle') {
                 extBtnSelector = '.button-toolbar:not(.button-narrow)';
                 if (!pref.value)
                     extBtnSelector += '.button-temporarily-visible';
+                makePopup();
             }
+        }
+
+        function updateSelector() {
+            vivaldi.prefs.get('vivaldi.address_bar.extensions.show_toggle', (toggle) => {
+                extBtnSelector = '.button-toolbar:not(.button-narrow)';
+                if (!toggle)
+                    extBtnSelector += '.button-temporarily-visible';
+            });
         }
 
         // Do not crash, please
@@ -65,14 +78,17 @@
                 });
                 if (isExtBtn)
                     document.querySelector('.button-toolbar.' + extId).remove();
+                else
+                    return removeChild.apply(this, arguments);
             } else {
                 return removeChild.apply(this, arguments);
             }
         }
 
         vivaldi.prefs.onChanged.addListener(checkChange);
-
+        updateSelector();
         addCss();
+        makePopup();
     }
     setTimeout(function wait() {
         let extBar = document.querySelector('.toolbar-addressbar .toolbar-extensions');
