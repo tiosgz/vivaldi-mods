@@ -23,6 +23,26 @@
         let extBtnSelector = '.button-toolbar:not(.button-narrow).button-temporarily-visible';
         let order = [];
 
+        function onAttributesChange(mutations, observer) {
+            for (let mutation of mutations) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                    let id = null;
+                    mutation.oldValue.split(' ').forEach((cls) => {
+                        if ((/^[a-z]{32}$/).test(cls)) {
+                            id = cls;
+                        }
+                    });
+                    if (id) {
+                        if (mutation.oldValue.includes('button-temporarily-visible')) {
+                            moveOutside(id);
+                        } else {
+                            moveToPopup(id);
+                        }
+                    }
+                }
+            }
+        }
+
         function getId(button) {
             if (!button) return null;
             let id = null;
@@ -34,11 +54,12 @@
             return id;
         }
 
-        function nextButton(extId) {
+        function nextButton(extId, parent) {
             if (order.includes(extId)) {
+                if (!parent) parent = extBar;
                 for (let i = order.indexOf(extId); i < order.length; i++) {
-                    let btn = extBar.querySelector('.mod-extensions-buttons-popup .button-toolbar.' + order[i]);
-                    if (btn)
+                    let btn = parent.querySelector('.button-toolbar.' + order[i]);
+                    if (btn && btn.parentElement === parent)
                         return btn;
                 }
                 return null;
@@ -47,7 +68,24 @@
             }
         }
 
+        function watchClassChanges() {
+            let btns = extBar.querySelectorAll('.button-toolbar:not(.button-narrow)');
+            let observer = new MutationObserver(onAttributesChange);
+            let options = {
+                attributes: true,
+                attributeFilter: [ "class" ],
+                attributeOldValue: true
+            };
+            btns.forEach((button) => {
+                if (!button.dataset.extPopupWatched) {
+                    button.dataset.extPopupWatched = true;
+                    observer.observe(button, options);
+                }
+            })
+        }
+
         function makePopup() {
+            watchClassChanges();
             vivaldi.prefs.get('vivaldi.address_bar.extensions.visible', (hideExts) => {
                 if (!hideExts) {
                     removePopup();
@@ -66,15 +104,19 @@
             });
         }
 
-        function moveToPopup() {
+        function moveToPopup(id) {
             if (extBar.querySelector('.mod-extensions-buttons-popup')) {
-                let extButtons = extBar.querySelectorAll(extBtnSelector);
+                let extButtons;
+                if (id)
+                    extButtons = [extBar.querySelector('.button-toolbar.' + id)];
+                else
+                    extButtons = extBar.querySelectorAll(extBtnSelector);
                 let popup = extBar.querySelector('.mod-extensions-buttons-popup');
                 extButtons.forEach(function(button) {
                     if (button.parentElement !== popup) {
                         button.parentElement.removeChild(button);
-                        if (nextButton(getId(button))) {
-                            popup.insertBefore(button, nextButton(getId(button)));
+                        if (nextButton(getId(button), popup)) {
+                            popup.insertBefore(button, nextButton(getId(button), popup));
                         } else {
                             popup.appendChild(button);
                         }
@@ -85,19 +127,31 @@
             }
         }
 
-        function moveOutside() {
+        function moveOutside(id) {
             let popup = extBar.querySelector('.mod-extensions-buttons-popup');
             if (popup) {
                 let moveBefore = extBar.querySelector('.button-toolbar.button-narrow');
                 if (!moveBefore)
                     moveBefore = extBar.querySelector('.extension-popup');
-                while (popup.firstElementChild) {
-                    let btn = popup.firstElementChild;
-                    popup.removeChild(btn);
-                    if (moveBefore)
-                        extBar.insertBefore(btn, moveBefore);
-                    else
-                        extBar.appendChild(btn);
+                if (id) {
+                    let button = popup.querySelector('.button-toolbar.' + id);
+                    if (button) {
+                        button.parentElement.removeChild(button);
+                        let next = nextButton(id, extBar);
+                        if (next || moveBefore)
+                            extBar.insertBefore(button, next ? next : moveBefore);
+                        else
+                            extBar.appendChild(button);
+                    }
+                } else {
+                    while (popup.firstElementChild) {
+                        let btn = popup.firstElementChild;
+                        popup.removeChild(btn);
+                        if (moveBefore)
+                            extBar.insertBefore(btn, moveBefore);
+                        else
+                            extBar.appendChild(btn);
+                    }
                 }
             }
         }
@@ -113,7 +167,7 @@
             }
         }
 
-        function checkChange(pref) {
+        function checkPrefsChange(pref) {
             if (pref.path === 'vivaldi.address_bar.extensions.visible'){
                 makePopup();
             } else if (pref.path === 'vivaldi.address_bar.extensions.show_toggle') {
@@ -182,7 +236,7 @@
             }
         }
 
-        vivaldi.prefs.onChanged.addListener(checkChange);
+        vivaldi.prefs.onChanged.addListener(checkPrefsChange);
         chrome.storage.onChanged.addListener(updateOrder);
         updateSelector();
         updateOrder();
