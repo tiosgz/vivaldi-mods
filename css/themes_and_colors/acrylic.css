@@ -33,7 +33,7 @@
 }
 .mosaic, .startpage, .startpage .manager,
 .vivaldi-settings .settings-content,
-.inner, #main, .panel-group, .notes-editor, .toolbar {
+.inner, #main, #webview-container, .panel-group, .notes-editor, .toolbar {
   background: transparent !important;
   /*background-image: none !important;*/
   background-color: transparent !important;
