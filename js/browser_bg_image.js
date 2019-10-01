@@ -2,6 +2,12 @@ setTimeout(function wait() {
     var body = document.body;
     var head = document.head;
     if(body && head) {
+        function correctPath(path) {
+            if (path.startsWith('./../') || path.startsWith('../')) {
+                path = 'chrome-extension://mpognobbkildjkofajifpdfhcoklimli/' + path.slice(path.startsWith('./') ? 5 : 3);
+            }
+            return path;
+        }
         // var style = document.createElement('style');
         // style.innerHTML = `
         //     #app {
@@ -25,10 +31,10 @@ setTimeout(function wait() {
                     if (show_img === null) show_img = true;
                     vivaldi.prefs.get('vivaldi.startpage.image.path', function(img_path) {
                         if (!img_path) img_path = './../resources/bg.jpg';
-                        if (img_path.startsWith('./../') || img_path.startsWith('../')) img_path = img_path.slice(3);
+                        img_path = correctPath(img_path);
                         vivaldi.prefs.get('vivaldi.startpage.image.path_custom', function(custom_img) {
                             if (!custom_img) custom_img = './../resources/bg.jpg';
-                            if (custom_img.startsWith('./../') || custom_img.startsWith('../')) custom_img = custom_img.slice(3);
+                            custom_img = correctPath(custom_img);
                             vivaldi.prefs.get('vivaldi.startpage.image.repeat', function(tile_img) {
                                 if (tile_img === null) tile_img = false;
                                 vivaldi.prefs.get('vivaldi.startpage.image.stretch', function(stretch_img) {
@@ -78,11 +84,11 @@ setTimeout(function wait() {
                     break;
                 case 'vivaldi.startpage.image.path':
                     if (!value) value = './../resources/bg.jpg';
-                    if (value.startsWith('./../') || value.startsWith('../')) value = value.slice(3);
+                    value = correctPath(value);
                     if (value === 'user_defined')
                         vivaldi.prefs.get('vivaldi.startpage.image.path_custom', function(cust_path) {
                             if (!cust_path) cust_path = './../resources/bg.jpg';
-                            if (cust_path.startsWith('./../') || cust_path.startsWith('../')) cust_path = cust_path.slice(3);
+                            cust_path = correctPath(cust_path);
                             body.style.setProperty('--startpageBgForcedImage', 'url(\'' + cust_path + '\')');
                         });
                     else
@@ -90,7 +96,7 @@ setTimeout(function wait() {
                     break;
                 case 'vivaldi.startpage.image.path_custom':
                     if (!value) value = './../resources/bg.jpg';
-                    if (value.startsWith('./../') || value.startsWith('../')) value = value.slice(3);
+                    value = correctPath(value);
                     vivaldi.prefs.get('vivaldi.startpage.image.path', function (path) {
                         if (path === 'user_defined')
                             body.style.setProperty('--startpageBgForcedImage', 'url(\'' + value + '\')');
