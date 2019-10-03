@@ -14,17 +14,27 @@
                 .extension-popup[style*="left: -"] {
                     left: 0 !important;
                 }
+                .mod-left-toolbar-extensions .button-badge {
+                  text-shadow: 0 1px rgba(0, 0, 0, 0.5);
+                  box-shadow: 0 1px rgba(0, 0, 0, 0.5);
+                  color: #fff;
+                }
             `;
             document.head.appendChild(style);
         }
     }
 
     function doMod() {
-        const extBar = document.querySelector('.toolbar-addressbar .toolbar-extensions');
-        const addressBar = document.querySelector('.toolbar-addressbar');
-        const addressField = document.querySelector('.toolbar-addressbar .addressfield');
+        const extBar = () => document.querySelector('.toolbar-addressbar .toolbar-extensions');
+        const addressBar = () => document.querySelector('.toolbar-addressbar');
+        const addressField = () => document.querySelector('.toolbar-addressbar .addressfield');
         const extBtnSelector = '.button-toolbar:not(.button-narrow)';
         let order = [];
+        let makingToolbar = false;
+
+        const removeChild = Element.prototype.removeChild;
+        const insertBefore = Element.prototype.insertBefore;
+        const appendChild = Element.prototype.appendChild;
 
         function getId(button) {
             if (!button) return null;
@@ -39,7 +49,7 @@
 
         function nextButton(extId, parent) {
             if (order.includes(extId)) {
-                if (!parent) parent = extBar;
+                if (!parent) parent = extBar();
                 for (let i = order.indexOf(extId); i < order.length; i++) {
                     let btn = parent.querySelector('.button-toolbar.' + order[i]);
                     if (btn && btn.parentElement === parent)
@@ -52,35 +62,39 @@
         }
 
         function makeToolbar() {
-            let toolbar = document.createElement('div');
-            toolbar.classList.add('mod-left-toolbar-extensions', 'toolbar', 'toolbar-mainbar', 'toolbar-large');
-            let extButtons = extBar.querySelectorAll(extBtnSelector);
-            extButtons.forEach(function(button) {
-                if (EXTENSION_IDS.includes(getId(button))) {
-                    button.parentElement.removeChild(button);
-                    toolbar.appendChild(button);
-                }
-            });
-            addressBar.insertBefore(toolbar, addressField);
+            if (!document.querySelector('.mod-left-toolbar-extensions') && !makingToolbar) {
+                makingToolbar = true;
+                let toolbar = document.createElement('div');
+                toolbar.classList.add('mod-left-toolbar-extensions', 'toolbar', 'toolbar-mainbar', 'toolbar-large');
+                let extButtons = extBar().querySelectorAll(extBtnSelector);
+                extButtons.forEach(function(button) {
+                    if (EXTENSION_IDS.includes(getId(button))) {
+                        button.parentElement.removeChild(button);
+                        appendChild.apply(toolbar, [button]);
+                    }
+                });
+                insertBefore.apply(addressBar(), [toolbar, addressField()]);
+                makingToolbar = false;
+            }
         }
 
         function moveToToolbar(id) {
-            if (addressBar.querySelector('.mod-left-toolbar-extensions')) {
+            if (addressBar().querySelector('.mod-left-toolbar-extensions')) {
                 let extButtons = [];
                 if (id)
-                    extButtons = [extBar.querySelector('.button-toolbar.' + id)];
+                    extButtons = [extBar().querySelector('.button-toolbar.' + id)];
                 else {
-                    extButtons = Array.from(extBar.querySelectorAll(extBtnSelector));
+                    extButtons = Array.from(extBar().querySelectorAll(extBtnSelector));
                     extButtons = extButtons.filter((btn) => EXTENSION_IDS.includes(getId(btn)));;
                 }
-                let toolbar = addressBar.querySelector('.mod-left-toolbar-extensions');
+                let toolbar = addressBar().querySelector('.mod-left-toolbar-extensions');
                 extButtons.forEach(function(button) {
                     if (button && button.parentElement !== toolbar) {
                         button.parentElement.removeChild(button);
                         if (nextButton(getId(button), toolbar)) {
-                            toolbar.insertBefore(button, nextButton(getId(button), toolbar));
+                            insertBefore.apply(toolbar, [button, nextButton(getId(button), toolbar)]);
                         } else {
-                            toolbar.appendChild(button);
+                            appendChild.apply(toolbar, [button]);
                         }
                     }
                 });
@@ -90,13 +104,13 @@
         }
 
         function removeToolbar() {
-            let toolbar = extBar.querySelector('.mod-left-toolbar-extensions');
+            let toolbar = extBar().querySelector('.mod-left-toolbar-extensions');
             if (toolbar) {
                 if (toolbar.childElementCount) {
                     console.log('Warning: Removing non-empty toolbar!');
                     console.log(toolbar.children);
                 }
-                toolbar.parentElement.removeChild(toolbar);
+                removeChild.apply(toolbar.parentElement, toolbar);
             }
         }
 
@@ -122,7 +136,6 @@
         }
 
         // Do not crash, please
-        var removeChild = Element.prototype.removeChild;
         Element.prototype.removeChild = function() {
             if (arguments[0].tagName === 'DIV' && arguments[0].classList.contains('button-toolbar')) {
                 let extId = getId(arguments[0]);
@@ -134,24 +147,46 @@
                 return removeChild.apply(this, arguments);
             }
         }
-        var insertBefore = Element.prototype.insertBefore;
         Element.prototype.insertBefore = function() {
             if (arguments[0].tagName === 'DIV' && arguments[0].classList.contains('button-toolbar') &&
                 arguments[1].tagName === 'DIV' && arguments[1].classList.contains('button-toolbar')) {
                 let fstId = getId(arguments[0]);
                 let sndId = getId(arguments[1]);
                 let nextBtn = nextButton(fstId, this);
+                let oldButton = addressBar().querySelector('.button-toolbar.' + fstId);
+                if (oldButton)
+                    oldButton.parentElement.removeChild(oldButton);
                 if (fstId && nextBtn)
                     return insertBefore.apply(nextBtn.parentElement, [arguments[0], nextBtn]);
                 else if (fstId) {
-                    let parent = EXTENSION_IDS.includes(fstId) ? addressBar.querySelector('.mod-left-toolbar-extensions') : extBar;
+                    makeToolbar();
+                    let parent = EXTENSION_IDS.includes(fstId) ? addressBar().querySelector('.mod-left-toolbar-extensions') : extBar();
                     if (!parent)
-                        parent = extBar;
+                        parent = extBar();
                     return Element.prototype.appendChild.apply(parent, [arguments[0]]);
                 } else
                     return insertBefore.apply(this, arguments);
             } else {
                 return insertBefore.apply(this, arguments);
+            }
+        }
+        Element.prototype.appendChild = function() {
+            if (arguments[0].tagName === 'DIV' && arguments[0].classList.contains('button-toolbar')) {
+                let id = getId(arguments[0]);
+                if (id) {
+                    let oldButton = addressBar().querySelector('.button-toolbar.' + id);
+                    if (oldButton)
+                        oldButton.parentElement.removeChild(oldButton);
+                    makeToolbar();
+                    let parent = EXTENSION_IDS.includes(id) ? addressBar().querySelector('.mod-left-toolbar-extensions') : extBar();
+                    if (!parent)
+                        parent = extBar();
+                    return appendChild.apply(parent, arguments);
+                } else {
+                    return appendChild.apply(this, arguments);
+                }
+            } else {
+                return appendChild.apply(this, arguments);
             }
         }
 
