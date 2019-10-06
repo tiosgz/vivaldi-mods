@@ -1,8 +1,13 @@
 @charset "UTF-8";
 
-/* Currently these icons aren't ready for statusbar – thanks “.toolbar-large” they are changed only in addressbar */
+/* Currently these icons aren't ready for statusbar – thanks to “.toolbar-large” they are changed only in addressbar */
 /* If you use another language than English, don't forget to edit the selectors */
 /* To change the icons just place your SVG path code between “d: path('” and “');” */
+
+/* Fix for rewind and fast forward buttons width */
+.toolbar-addressbar > .toolbar-large:first-child > .button-toolbar.button-narrow > button {
+	width: 34px;
+}
 
 /* Home */
 .toolbar-large .button-toolbar[title="Go to homepage"] button svg path,
