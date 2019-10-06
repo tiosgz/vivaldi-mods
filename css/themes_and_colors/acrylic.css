@@ -47,6 +47,13 @@
   background:  var(--colorBgAlphaHeavy) !important;
   background-color:  var(--colorBgAlphaHeavy) !important;
 }
+.toolbar-addressbar, .toolbar-mainbar {
+  color: var(--colorFg) !important;
+}
+.toolbar-mainbar .button-toolbar > button:hover,
+.toolbar-mainbar .button-toolbar > button:active {
+  background-color: var(--colorBgDarker) !important;
+}
 .vivaldi-tree, .panel > header {
   background-color: var(--colorBgAlpha) !important;
 }
