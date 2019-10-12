@@ -15,18 +15,22 @@
 #tabs-container.right {
     right: 0;
 }
-#panels-container.right:not([style="width: 0px;"]) ~ #tabs-container.right {
-    right: 34px;
+#browser.tabs-right #panels-container.right:not([style="width: 0px;"]) {
+    right: 31px;
 }
-#panels-container.left:not([style="width: 0px;"]) ~ #tabs-container.left {
-    left: 34px;
+#browser.tabs-left #panels-container.left:not([style="width: 0px;"]) {
+    left: 31px;
+}
+#panels-container.right ~ #tabs-container.right,
+#panels-container.left ~ #tabs-container.left {
+    z-index: 3;
 }
 
 #browser.tabs-left #webview-container {
-    margin-left: 30px;
+    margin-left: 31px;
 }
 #browser.tabs-right #webview-container {
-    margin-right: 30px;
+    margin-right: 31px;
 }
 
 #tabs-container.left .tab-strip::-webkit-scrollbar,
