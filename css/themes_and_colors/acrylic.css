@@ -86,3 +86,20 @@ input.quick-command-search-hint,
     background-color: var(--colorBgAlphaHeavy) !important;
     backdrop-filter: blur(2px);
 }
+
+#modal-bg.show-keyboard-shortcuts-modal-top > div {
+    background-color: var(--colorBgAlphaHeavy);
+    backdrop-filter: blur(2px);
+}
+.show-keyboard-shortcuts-modal-top .category.hide {
+    background-color: var(--colorBgAlphaHeavier);
+}
+.show-keyboard-shortcuts-modal-top .keyboardShortcutsWrapper header {
+    border-bottom-color: var(--colorBgAlphaHeavier);
+}
+.show-keyboard-shortcuts-modal-top .category.hide:hover {
+    background-color: var(--colorBgAlphaHeavy);
+}
+.show-keyboard-shortcuts-modal-top .category > button:focus {
+    color: var(--colorFgIntense);
+}
