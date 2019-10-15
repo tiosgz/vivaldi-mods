@@ -103,3 +103,13 @@ input.quick-command-search-hint,
 .show-keyboard-shortcuts-modal-top .category > button:focus {
     color: var(--colorFgIntense);
 }
+
+/* Image inspector */
+/* (also make it an overlay) */
+.image-inspector {
+    background-color: var(--colorBgAlphaHeavy);
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
