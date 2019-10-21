@@ -128,12 +128,17 @@ class ModButtonsManager {
             // show it (to know its size)
             this.__pe.appendChild(popup);
             // calculate placement
-            // const browserRect = document.querySelector('#browser').getBoundingClientRect();
+            const browserRect = document.querySelector('#browser').getBoundingClientRect();
             const parentRect = this.__pe.getBoundingClientRect();
             const btnRect = this.__btn.getBoundingClientRect();
             const popupRect = popup.getBoundingClientRect();
             popup.style.setProperty('left', `${Math.max(0, btnRect.right - parentRect.x - popupRect.width)}px`);
-            popup.style.setProperty('top', `${parentRect.height}px`);
+            let freeTop = parentRect.top - popupRect.height;
+            let freeBtm = browserRect.height - (parentRect.bottom + popupRect.height);
+            if (freeBtm >= freeTop)
+                popup.style.setProperty('top', `${parentRect.height}px`);
+            else
+                popup.style.setProperty('bottom', `${parentRect.height}px`);
 
             // popup.setAttribute('style', 'position: absolute; top: 40px; left: 1300px; height: 100px; width: 100px; background: var(--colorBg);');
         }
