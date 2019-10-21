@@ -16,6 +16,7 @@ class ModButtonsManager {
         this.specificClass = specificClass;
         this.otherClasses = otherClasses;
         this.append();
+        vivaldi.prefs.onChanged.addListener(this.checkAddressBarState.bind(this));
     }
 
     set button(btn) {
@@ -85,7 +86,28 @@ class ModButtonsManager {
     }
     get otherClasses() { return this.__oc; }
 
+    checkAddressBarState(pref) {
+        if (pref) {
+            if (pref.path === 'vivaldi.address_bar.visible') {
+                if (pref.value)
+                    this.append();
+                else
+                    this.remove();
+            } else if (pref.path === 'vivaldi.address_bar.position' && this.__popup) {
+                if (pref.value === 'bottom')
+                    this.__popup.style.setProperty('bottom', this.__popup.style.removeProperty('top'));
+                else
+                    this.__popup.style.setProperty('top', this.__popup.style.removeProperty('bottom'));
+            }
+        } else {
+            if (this.__popup)
+                vivaldi.prefs.get('vivaldi.address_bar.position', pos => this.__popup.style.setProperty(pos, `${this.__pe.offsetHeight}px`));
+            vivaldi.prefs.get('vivaldi.address_bat.visible', shown => { if (shown) this.append(); else this.remove(); });
+        }
+    }
+
     remove() {
+        this.removePopup();
         if (this.__btn && this.__btn.parentElement)
             this.__btn.parentElement.removeChild(this.__btn);
     }
@@ -139,8 +161,6 @@ class ModButtonsManager {
                 popup.style.setProperty('top', `${parentRect.height}px`);
             else
                 popup.style.setProperty('bottom', `${parentRect.height}px`);
-
-            // popup.setAttribute('style', 'position: absolute; top: 40px; left: 1300px; height: 100px; width: 100px; background: var(--colorBg);');
         }
     }
 
@@ -151,16 +171,11 @@ class ModButtonsManager {
             this.__popup = null;
         }
     }
-    // Properties:
-    // - button - the button object itself
-    // - parent - parent element of the button
-    // - next - next sibling of the button (used for inserting it), can null
-    // - createPopup() - logic for creating the popup
-    // Other important notes
-    // - add lostFocus() to the popup
-    // - handle insertBefore(), appendChild() and removeChild()
+    // TODO:
+    // - ? add lostFocus() to the popup
+    // - ? handle insertBefore(), appendChild() and removeChild()
     // - handle AB placement change / hiding / showing
-    // - calculate if the popup should be placed above or below its parent
+    // - # calculate if the popup should be placed above or below its parent
 }
 
 let button = document.createElement('button');
