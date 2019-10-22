@@ -87,22 +87,24 @@ class ModButtonsManager {
     get otherClasses() { return this.__oc; }
 
     checkAddressBarState(pref) {
-        if (pref) {
-            if (pref.path === 'vivaldi.address_bar.visible') {
-                if (pref.value)
-                    this.append();
-                else
-                    this.remove();
-            } else if (pref.path === 'vivaldi.address_bar.position' && this.__popup) {
-                if (pref.value === 'bottom')
-                    this.__popup.style.setProperty('bottom', this.__popup.style.removeProperty('top'));
-                else
-                    this.__popup.style.setProperty('top', this.__popup.style.removeProperty('bottom'));
+        if (this.__pe && this.__pe.classList.contains('toolbar-addressbar')) {
+            if (pref) {
+                if (pref.path === 'vivaldi.address_bar.visible') {
+                    if (pref.value)
+                        this.append();
+                    else
+                        this.remove();
+                } else if (pref.path === 'vivaldi.address_bar.position' && this.__popup) {
+                    if (pref.value === 'bottom')
+                        this.__popup.style.setProperty('bottom', this.__popup.style.removeProperty('top'));
+                    else
+                        this.__popup.style.setProperty('top', this.__popup.style.removeProperty('bottom'));
+                }
+            } else {
+                if (this.__popup)
+                    vivaldi.prefs.get('vivaldi.address_bar.position', pos => this.__popup.style.setProperty(pos, `${this.__pe.offsetHeight}px`));
+                vivaldi.prefs.get('vivaldi.address_bat.visible', shown => { if (shown) this.append(); else this.remove(); });
             }
-        } else {
-            if (this.__popup)
-                vivaldi.prefs.get('vivaldi.address_bar.position', pos => this.__popup.style.setProperty(pos, `${this.__pe.offsetHeight}px`));
-            vivaldi.prefs.get('vivaldi.address_bat.visible', shown => { if (shown) this.append(); else this.remove(); });
         }
     }
 
@@ -176,9 +178,10 @@ class ModButtonsManager {
     // - ? handle insertBefore(), appendChild() and removeChild()
     // - handle AB placement change / hiding / showing
     // - # calculate if the popup should be placed above or below its parent
+    // - fix behavior when another parent than address bar is used
 }
 
-let button = document.createElement('button');
+/*let button = document.createElement('button');
 button.classList.add('mod-button-test');
 button.style.height = '40px';
 button.style.width = '100px';
@@ -199,3 +202,26 @@ let mkContents = () => {
     return main;
 };
 let mgr = new ModButtonsManager(div, ab, null, mkContents, 'mod-test');
+
+
+let btn = document.createElement('button');
+btn.classList.add('mod-btn-test');
+btn.style.height = '20px';
+btn.style.width = '100px';
+btn.innerHTML = '<svg viewBox="0 0 100 20"><path d="M5 2h90v16l-30 -16, -30 16, -30 -16z" /></svg>';
+let dv = document.createElement('div');
+dv.classList.add('button-toolbar');
+dv.appendChild(btn);
+let sb = document.querySelector('.toolbar-statusbar');
+let mkCon = () => {
+    const main = document.createElement('div');
+    main.setAttribute('style', 'min-height: 200px; min-width: 150px; background: aqua; border: 10px solid red; box-sizing: border-box;');
+    const div = document.createElement('div');
+    div.style.margin = '20px 10px 30px 100px';
+    div.style.height = '130px';
+    div.style.width = '20px';
+    div.style.backgroundColor = 'lightgreen';
+    main.appendChild(div);
+    return main;
+};
+let mg = new ModButtonsManager(dv, sb, null, mkCon, 'mod-tst');*/
