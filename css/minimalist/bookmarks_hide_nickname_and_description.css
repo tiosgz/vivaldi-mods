@@ -1,17 +1,6 @@
 @charset "UTF-8";
 
-/* Hide nickname and description in bookmarks tree and nickname in the editor */
-.bookmark.manager .vivaldi-tree .tree-row > label:nth-of-type(3),
-.bookmark.manager .sortselector.sortselector-tableheader > div:nth-of-type(3),
-.bookmark.manager .vivaldi-tree .tree-row > label:nth-of-type(4),
-.bookmark.manager .sortselector.sortselector-tableheader > div:nth-of-type(4) {
-    display: none;
-}
+/* Hide nickname in bookmarks editor */
 .manager-editor .lower-half > div:nth-of-type(2) {
     display: none !important;
 }
-/* Expand visible columns to align them with headers */
-.bookmark.manager .vivaldi-tree .tree-row > label {
-    flex: 1 1 auto;
-}
-
