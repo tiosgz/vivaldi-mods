@@ -1,6 +1,6 @@
 # Modifications of Vivaldi browser
 
-Mods I use or have used in [Vivaldi](https://vivaldi.com/). Not all are by me — don't be surprised when you find your mod here. Some have a JS and a CSS part — if you don't know what this or that CSS mod does, try looking in the `js/` folder. Some of them may not work.
+Mods I use or have used in [Vivaldi](https://vivaldi.com/). Not all are by me — don't be surprised when you find your mod here. Some have a JS and a CSS part — that should be mentioned at the beginning of both files. Some of the mods may not work.
 
 If you don't know how to apply them, follow [this tutorial](https://forum.vivaldi.net/topic/10549/modding-vivaldi).
 
