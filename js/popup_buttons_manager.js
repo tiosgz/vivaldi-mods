@@ -1,6 +1,8 @@
+/* This mod itself does nothing */
+
 'use strict';
 
-class ModButtonsManager {
+class ModPopupButtonsManager {
     constructor(button, parentElement, nextSibling, createPopup, specificClass, otherClasses) {
         this.__btn = null;
         this.__pe = null;
@@ -181,6 +183,7 @@ class ModButtonsManager {
     // - fix behavior when another parent than address bar is used
 }
 
+// For testing
 /*let button = document.createElement('button');
 button.classList.add('mod-button-test');
 button.style.height = '40px';
@@ -201,7 +204,7 @@ let mkContents = () => {
     main.appendChild(div);
     return main;
 };
-let mgr = new ModButtonsManager(div, ab, null, mkContents, 'mod-test');
+let mgr = new ModPopupButtonsManager(div, ab, null, mkContents, 'mod-test');
 
 
 let btn = document.createElement('button');
@@ -224,4 +227,4 @@ let mkCon = () => {
     main.appendChild(div);
     return main;
 };
-let mg = new ModButtonsManager(dv, sb, null, mkCon, 'mod-tst');*/
+let mg = new ModPopupButtonsManager(dv, sb, null, mkCon, 'mod-tst');*/

@@ -1,3 +1,5 @@
+/* Use with /css/tabs/domain_on_tab_thumb.css */
+
 var DEBUG = false;
 
 (function observeTopNodeWhenExists() {

@@ -1,5 +1,5 @@
 @charset "UTF-8";
 
-.speeddial .dial-columns .folder .thumbnail .folder-flap {
+.speeddial .dial-columns .dial.folder .thumbnail-image .folder-flap {
 	display: none;
 }

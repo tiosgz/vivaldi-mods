@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+/* Use with /js/browser_bg_image.js */
+
 #app {
   background-image: var(--startpageBgImage);
   background-color: var(--startpageBgColor);

@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+/* Use with /js/addressbar_toolbar_toggle.js */
+
 .toolbar-addressbar.toolbar > .toolbar.toolbar-droptarget.toolbar-mainbar.mod-addressbar-toolbar-collapsed > div.collapsible {
   display: none;
 }

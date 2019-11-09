@@ -1,3 +1,5 @@
+/* Use with /css/minimalist/navigation_toolbar_toggle.css */
+
 (function(){
     function toggleToolbar() {
         let toolbar = document.querySelector('.toolbar-addressbar.toolbar > .toolbar.toolbar-droptarget.toolbar-mainbar');

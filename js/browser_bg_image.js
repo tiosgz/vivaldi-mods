@@ -1,3 +1,5 @@
+/* Use with /css/themes_and_colors/acrylic.css */
+
 setTimeout(function wait() {
     var body = document.body;
     var head = document.head;
