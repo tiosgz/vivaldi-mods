@@ -10,4 +10,5 @@
 }
 .startpage .thumbnail-image img {
     object-fit: contain;
+    object-position: center;
 }

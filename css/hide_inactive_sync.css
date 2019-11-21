@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
-.button-toolbar[title="Sync not connected"] {
+.button-toolbar[title="Sync not connected"],
+.button-toolbar > button[title="Sync not connected"] {
 	display: none !important;
 }
