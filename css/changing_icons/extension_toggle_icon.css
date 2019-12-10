@@ -1,9 +1,15 @@
 @charset "UTF-8";
 
-.toolbar-extensions .button-toolbar.button-narrow button svg {
-  width: 16px;
-  height: 16px;
+/* That strange class test is to avoid any other classes (ext. ID) */
+.toolbar-extensions > [class="button-toolbar"] > button {
+    width: 16px !important;
+    min-width: 16px !important;
 }
-.toolbar-extensions .button-toolbar.button-narrow button svg path {
-  d: path("M9.75,0h1.625v26h-1.625v-26zm3.25,0h1.625v26h-1.625v-26z");
+.toolbar-extensions > [class="button-toolbar"] > button svg {
+    height: 16px !important;
+    width: 16px !important;
+    flex: 0 16px !important;
+}
+.toolbar-extensions > [class="button-toolbar"] > button svg path {
+    d: path("M9.75,0h1.625v26h-1.625v-26zm3.25,0h1.625v26h-1.625v-26z");
 }

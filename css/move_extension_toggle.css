@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
 /* Make extensions toolbar feel differently */
-.toolbar-extensions div.button-narrow {
+/* That strange class test is to avoid any other classes (ext. ID) */
+.toolbar-extensions > [class="button-toolbar"] {
   order: -1;
 }
 /* Remove the separator displayed left of first extension button */
