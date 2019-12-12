@@ -1,12 +1,14 @@
 @charset "UTF-8";
 
-/* Use with /js/browser_bg_image.js */
+/* Use with /js/browser_bg_image.js and /js/window_size_to_css.js */
 
 #app {
   background-image: var(--startpageBgImage);
   background-color: var(--startpageBgColor);
-  background-size: var(--startpageBgSize);
+  /*background-size: var(--startpageBgSize);*/
   background-repeat: var(--startpageBgRepeat);
+  background-size: calc(var(--screenWidth) * 1px) calc(var(--screenHeight) * 1px);
+  background-position: calc((0 - var(--windowLeft)) * 1px) calc((0 - var(--windowTop)) * 1px);
 }
 #browser {
   /*backdrop-filter: blur(3px);*/
