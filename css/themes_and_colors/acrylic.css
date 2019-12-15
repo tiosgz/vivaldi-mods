@@ -15,43 +15,24 @@
   background: transparent !important;
   background-color: transparent !important;
 }
-/*#browser.theme-light {
-  background: url("../resources/old_bg_alt_4.jpg");/*0,3,4,7*//*1,4,5*/
-  /*background-size: cover;
-  backdrop-filter: blur(10px);
-}
-#browser.theme-dark {
-  background: url("chrome://vivaldi-data/local-image/391d5ab9-f606-4d42-9a03-d8ee254cdf90");/*../resources/(old_)bg_alt_x.jpg*//*2,6,7*//*1,2,4,5*//*wallpapers/green-wallpaper-11-jpg*/
-  /*background-size: cover;
-  backdrop-filter: blur(10px);
-}*/
 .notes-cardwrapper {
   backdrop-filter: blur(2px);
-}
-#tabs-container /*#main, /*.inner,
-/*.vivaldi-settings .settings-content,
-/*.startpage, .startpage .manager,*/ /*header*/ {
-  /*background: transparent !important;*/
-  background: var(--colorBgAlphaHeavier) !important;
-  background-color: var(--colorBgAlphaHeavier) !important;
 }
 .mosaic, .startpage, .startpage .manager,
 .vivaldi-settings .settings-content,
 .inner, #main, #webview-container, .panel-group, .notes-editor, .toolbar, #webpage-stack > .webpageview {
   background: transparent !important;
-  /*background-image: none !important;*/
   background-color: transparent !important;
 }
-.tab.active, .toolbar-addressbar, #switch,
-.toolbar-statusbar, .vivaldi-settings,
+#switch, .toolbar-statusbar, .vivaldi-settings,
 .vivaldi-settings .settings-sidebar, .startpage .manager > div,
 .addressfield, #header, .welcome-wrapper, .notes-cardwrapper,
 #browser.address-bottom:not(.color-behind-tabs-on) .toolbar-statusbar,
-#browser.address-bottom.color-behind-tabs-on .toolbar-statusbar {
+#browser.address-bottom.color-behind-tabs-on .toolbar-statusbar, #notes-panel .no-notes {
   background:  var(--colorBgAlphaHeavy) !important;
   background-color:  var(--colorBgAlphaHeavy) !important;
 }
-.toolbar-addressbar, .toolbar-mainbar {
+.toolbar-mainbar {
   color: var(--colorFg) !important;
 }
 .toolbar-mainbar .button-toolbar > button:hover,
@@ -61,7 +42,57 @@
 .vivaldi-tree, .panel > header {
   background-color: var(--colorBgAlpha) !important;
 }
-.private-intro, #notes-panel .no-notes {
+
+/* Keep the accent color */
+.color-behind-tabs-off .toolbar-addressbar,
+.color-behind-tabs-off .tab.active {
+  background: var(--colorAccentBgAlpha) !important;
+  color: var(--colorAccentFg) !important;
+}
+.color-behind-tabs-off .toolbar-addressbar > .toolbar {
+  color: var(--colorAccentFg) !important;
+}
+.color-behind-tabs-off #tabs-container {
+  background: var(--colorBgAlphaHeavier) !important;
+  color: var(--colorFg) !important;
+}
+.color-behind-tabs-off .HiddenToggleExtensionIcon {
+  background-color: var(--colorAccentBgAlpha) !important;
+}
+.color-behind-tabs-off .toolbar-addressbar > .toolbar .button-toolbar > button:hover,
+.color-behind-tabs-off .toolbar-addressbar > .toolbar .button-toolbar > button:active,
+.color-behind-tabs-off .button-circularimage.profile-popup > button:hover,
+.color-behind-tabs-off .button-circularimage.profile-popup > button:active {
+  background-color: var(--colorAccentBgDarker) !important;
+}
+
+.color-behind-tabs-on .tab.active {
+  background: var(--colorBgAlphaHeavy) !important;
+  color: var(--colorFg) !important;
+}
+#browser.color-behind-tabs-on {
+  color: var(--colorFg) !important;
+}
+.color-behind-tabs-on #tabs-container {
+  background: var(--colorAccentBgAlphaHeavy) !important;
+  color: var(--colorAccentFg) !important;
+}
+.color-behind-tabs-on .tab:not(.active) {
+  background: var(--colorAccentBgAlpha) !important;
+  color: var(--colorAccentFg) !important;
+}
+.color-behind-tabs-on .HiddenToggleExtensionIcon {
+  background-color: var(--colorBgAlphaHeavy) !important;
+}
+.color-behind-tabs-on .toolbar-addressbar > .toolbar .button-toolbar > button:hover,
+.color-behind-tabs-on .toolbar-addressbar > .toolbar .button-toolbar > button:active,
+.color-behind-tabs-on .button-circularimage.profile-popup > button:hover,
+.color-behind-tabs-on .button-circularimage.profile-popup > button:active {
+  background-color: var(--colorBgDarker) !important;
+}
+
+/* Private windows */
+.private-intro {
   background: var(--colorBgAlphaHeavy);
 }
 .private .toolbar-addressbar .addressfield,
@@ -70,6 +101,7 @@
   color: var(--colorFg) !important;
   fill: var(--colorFg) !important;
 }
+
 /* Make also tiled startpage transparent */
 .webpageview.internal .devtools-container .webpage {
     visibility: hidden;
@@ -91,6 +123,7 @@ input.quick-command-search-hint,
     backdrop-filter: blur(2px);
 }
 
+/* Keyboard shortcuts cheat sheet */
 #modal-bg.show-keyboard-shortcuts-modal-top > div {
     background-color: var(--colorBgAlphaHeavy);
     backdrop-filter: blur(2px);
