@@ -4,6 +4,69 @@ setTimeout(function wait() {
     var body = document.body;
     var head = document.head;
     if(body && head) {
+        function toggleAcrylic(newState, noForce) {
+            if (newState === null || newState === undefined) {
+                chrome.storage.local.get({'_mods':{}}, (m) => {
+                    if (m._mods.acrylic && m._mods.acrylic.active !== undefined) {
+                        toggleAcrylic(m._mods.acrylic.active, true);
+                    } else {
+                        toggleAcrylic(true);
+                    }
+                });
+            } else {
+                if (newState) {
+                    body.classList.add('-mod-acrylic');
+                    console.log('Turned Acrylic on');
+                } else {
+                    body.classList.remove('-mod-acrylic');
+                    console.log('Turned Acrylic off');
+                }
+                if (!noForce) {
+                    chrome.storage.local.get({'_mods':{}}, (m) => {
+                        if (!m._mods.acrylic) {
+                            m._mods.acrylic = {};
+                        }
+                        m._mods.acrylic.active = newState ? true : false;
+                        chrome.storage.local.set({'_mods':m._mods});
+                    });
+                }
+            }
+        }
+        body.addEventListener('click', () => setTimeout(() => {
+            let group = document.querySelector('.vivaldi-settings .setting-section .settings-startpage .setting-group.unlimited ~ .setting-group.unlimited + .setting-group');
+            if (group && !document.querySelector('#-mod-acrylic-active-setting-checkbox')) {
+                let d = document.createElement('div');
+                d.classList.add('setting-single', '-mod-added-setting');
+                d.id = '-mod-acrylic-active-setting-checkbox';
+                d.innerHTML = '<label><input type="checkbox"/><span>Background Accross Whole Window</span></label>';
+                d.dataset.settingPath = 'storage.local:_mods.acrylic.active';
+                let cb = d.firstElementChild.firstElementChild;
+                chrome.storage.local.get({'_mods':{}}, (m) => {
+                    let checked = true;
+                    if (!m._mods.acrylic) {
+                        m._mods.acrylic = {active:true};
+                        chrome.storage.local.set({'_mods':m._mods});
+                    }
+                    if (m._mods.acrylic.active !== true || m._mods.acrylic.active !== false) {
+                        m._mods.acrylic.active = true;
+                        chrome.storage.local.set({'_mods':m._mods});
+                    } else {
+                        checked = m._mods.acrylic.active;
+                    }
+                    if (checked) {
+                        cb.checked = true;
+                    } else {
+                        cb.removeAttribute('checked');
+                    }
+                });
+                cb.addEventListener('change', () => {
+                    console.log(cb.checked);
+                    toggleAcrylic(cb.checked);
+                });
+                group.appendChild(d);
+            }
+        }, 50));
+        toggleAcrylic();
         function correctPath(path) {
             if (path.startsWith('./../') || path.startsWith('../')) {
                 path = 'chrome-extension://mpognobbkildjkofajifpdfhcoklimli/' + path.slice(path.startsWith('./') ? 5 : 3);
