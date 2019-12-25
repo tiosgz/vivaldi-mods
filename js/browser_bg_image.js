@@ -52,7 +52,7 @@ setTimeout(function wait() {
                         m._mods.acrylic = {active:true};
                         chrome.storage.local.set({'_mods':m._mods});
                     }
-                    if (m._mods.acrylic.active !== true || m._mods.acrylic.active !== false) {
+                    if (m._mods.acrylic.active !== true && m._mods.acrylic.active !== false) {
                         m._mods.acrylic.active = true;
                         chrome.storage.local.set({'_mods':m._mods});
                     } else {
