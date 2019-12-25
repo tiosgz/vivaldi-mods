@@ -4,24 +4,26 @@ setTimeout(function wait() {
     var body = document.body;
     var head = document.head;
     if(body && head) {
-        function toggleAcrylic(newState, noForce) {
+        function toggle(what, newState, noForce) {
+            if (what !== 'active' && what !== 'wallpaper_mode')
+                return;
             if (newState === null || newState === undefined) {
                 chrome.storage.local.get({'_mods':{}}, (m) => {
-                    if (m._mods.acrylic && m._mods.acrylic.active !== undefined) {
-                        toggleAcrylic(m._mods.acrylic.active, true);
+                    if (m._mods.acrylic && m._mods.acrylic[what] !== undefined) {
+                        toggle(what, m._mods.acrylic[what], true);
                     } else {
-                        toggleAcrylic(true);
+                        toggle(what, (what === 'active'));
                     }
                 });
             } else {
-                let cb = document.querySelector('#-mod-acrylic-active-setting-checkbox input');
+                let cb = document.querySelector('#-mod-acrylic-' + what + '-setting-checkbox input');
                 if (newState) {
-                    body.classList.add('-mod-acrylic');
+                    body.classList.add(what === 'active' ? '-mod-acrylic' : '-mod-wallpaper-sync');
                     if (cb) {
                         cb.checked = true;
                     }
                 } else {
-                    body.classList.remove('-mod-acrylic');
+                    body.classList.remove(what === 'active' ? '-mod-acrylic' : '-mod-wallpaper-sync');
                     if (cb) {
                         cb.checked = false;
                     }
@@ -31,48 +33,58 @@ setTimeout(function wait() {
                         if (!m._mods.acrylic) {
                             m._mods.acrylic = {};
                         }
-                        m._mods.acrylic.active = newState ? true : false;
+                        m._mods.acrylic[what] = newState ? true : false;
                         chrome.storage.local.set({'_mods':m._mods});
                     });
                 }
             }
         }
-        body.addEventListener('click', () => setTimeout(() => {
+        function makeCheckbox(name) {
+            if (name !== 'active' && name !== 'wallpaper_mode') return;
             let group = document.querySelector('.vivaldi-settings .setting-section .settings-startpage .setting-group.unlimited ~ .setting-group.unlimited + .setting-group');
-            if (group && !document.querySelector('#-mod-acrylic-active-setting-checkbox')) {
+            if (group && !document.querySelector('#-mod-acrylic-' + name + '-setting-checkbox')) {
                 let d = document.createElement('div');
                 d.classList.add('setting-single', '-mod-added-setting');
-                d.id = '-mod-acrylic-active-setting-checkbox';
-                d.innerHTML = '<label><input type="checkbox"/><span>Background Accross Whole Window</span></label>';
-                d.dataset.settingPath = 'storage.local:_mods.acrylic.active';
+                d.id = '-mod-acrylic-' + name + '-setting-checkbox';
+                d.innerHTML = '<label><input type="checkbox"/><span>'
+                    + (name === 'active' ? 'Background Accross Whole Window' : 'Move With Window')
+                    + '</span></label>';
+                d.dataset.settingPath = 'storage.local:_mods.acrylic.' + name;
                 let cb = d.firstElementChild.firstElementChild;
                 chrome.storage.local.get({'_mods':{}}, (m) => {
                     let checked = true;
                     if (!m._mods.acrylic) {
-                        m._mods.acrylic = {active:true};
+                        m._mods.acrylic = {active:true, wallpaper_mode:false};
                         chrome.storage.local.set({'_mods':m._mods});
                     }
-                    if (m._mods.acrylic.active !== true && m._mods.acrylic.active !== false) {
-                        m._mods.acrylic.active = true;
+                    if (m._mods.acrylic[name] !== true && m._mods.acrylic[name] !== false) {
+                        m._mods.acrylic[name] = (name === 'active');
                         chrome.storage.local.set({'_mods':m._mods});
                     } else {
-                        checked = m._mods.acrylic.active;
+                        checked = m._mods.acrylic[name];
                     }
                     cb.checked = checked ? true : false;
                 });
                 cb.addEventListener('change', () => {
-                    toggleAcrylic(cb.checked);
+                    toggle(name, cb.checked);
                 });
                 group.appendChild(d);
             }
-        }, 50));
+        }
+        body.addEventListener('click', () => setTimeout(() => makeCheckbox('active'), 50));
+        body.addEventListener('click', () => setTimeout(() => makeCheckbox('wallpaper_mode'), 50));
         chrome.storage.onChanged.addListener((changes, area) => {
             if (area === 'local' && changes._mods) {
                 if (changes._mods.oldValue.acrylic.active !== changes._mods.newValue.acrylic.active)
-                    toggleAcrylic(changes._mods.newValue.acrylic.active, true);
+                    toggle(changes._mods.newValue.acrylic.active, true);
+                if (changes._mods.oldValue.acrylic.wallpaper_mode !== changes._mods.newValue.acrylic.wallpaper_mode)
+                    toggle(changes._mods.newValue.acrylic.wallpaper_mode, true);
             }
         })
-        toggleAcrylic();
+        toggle('active');
+        toggle('wallpaper_mode');
+
+
         function correctPath(path) {
             if (path.startsWith('./../') || path.startsWith('../')) {
                 path = 'chrome-extension://mpognobbkildjkofajifpdfhcoklimli/' + path.slice(path.startsWith('./') ? 5 : 3);
