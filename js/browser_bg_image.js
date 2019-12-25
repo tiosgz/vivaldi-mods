@@ -14,12 +14,17 @@ setTimeout(function wait() {
                     }
                 });
             } else {
+                let cb = document.querySelector('#-mod-acrylic-active-setting-checkbox input');
                 if (newState) {
                     body.classList.add('-mod-acrylic');
-                    console.log('Turned Acrylic on');
+                    if (cb) {
+                        cb.checked = true;
+                    }
                 } else {
                     body.classList.remove('-mod-acrylic');
-                    console.log('Turned Acrylic off');
+                    if (cb) {
+                        cb.checked = false;
+                    }
                 }
                 if (!noForce) {
                     chrome.storage.local.get({'_mods':{}}, (m) => {
@@ -53,19 +58,20 @@ setTimeout(function wait() {
                     } else {
                         checked = m._mods.acrylic.active;
                     }
-                    if (checked) {
-                        cb.checked = true;
-                    } else {
-                        cb.removeAttribute('checked');
-                    }
+                    cb.checked = checked ? true : false;
                 });
                 cb.addEventListener('change', () => {
-                    console.log(cb.checked);
                     toggleAcrylic(cb.checked);
                 });
                 group.appendChild(d);
             }
         }, 50));
+        chrome.storage.onChanged.addListener((changes, area) => {
+            if (area === 'local' && changes._mods) {
+                if (changes._mods.oldValue.acrylic.active !== changes._mods.newValue.acrylic.active)
+                    toggleAcrylic(changes._mods.newValue.acrylic.active, true);
+            }
+        })
         toggleAcrylic();
         function correctPath(path) {
             if (path.startsWith('./../') || path.startsWith('../')) {
