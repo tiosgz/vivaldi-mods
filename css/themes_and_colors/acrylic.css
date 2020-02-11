@@ -17,7 +17,8 @@ body.-mod-acrylic #browser {
   background: transparent !important;
   background-color: transparent !important;
 }
-body.-mod-acrylic .notes-cardwrapper {
+body.-mod-acrylic .NotesEditor-Editor,
+body.-mod-acrylic .NotesEditor-MDRender {
   backdrop-filter: blur(2px);
 }
 body.-mod-acrylic .mosaic,
@@ -28,7 +29,8 @@ body.-mod-acrylic .inner,
 body.-mod-acrylic #main,
 body.-mod-acrylic #webview-container,
 body.-mod-acrylic .panel-group,
-body.-mod-acrylic .notes-editor,
+body.-mod-acrylic .NotesEditor-Editor,
+body.-mod-acrylic .NotesEditor-MDRender,
 body.-mod-acrylic .toolbar,
 body.-mod-acrylic #webpage-stack > .webpageview {
   background: transparent !important;
@@ -42,7 +44,7 @@ body.-mod-acrylic .startpage .manager > div,
 body.-mod-acrylic .addressfield,
 body.-mod-acrylic #header,
 body.-mod-acrylic .welcome-wrapper,
-body.-mod-acrylic .notes-cardwrapper,
+body.-mod-acrylic .notes-editor,
 body.-mod-acrylic #browser.address-bottom:not(.color-behind-tabs-on) .toolbar-statusbar,
 body.-mod-acrylic #browser.address-bottom.color-behind-tabs-on .toolbar-statusbar,
 body.-mod-acrylic #notes-panel .no-notes {
@@ -56,7 +58,8 @@ body.-mod-acrylic .toolbar-mainbar .button-toolbar > button:hover,
 body.-mod-acrylic .toolbar-mainbar .button-toolbar > button:active {
   background-color: var(--colorBgDarker) !important;
 }
-body.-mod-acrylic .vivaldi-tree, .panel > header {
+body.-mod-acrylic .vivaldi-tree,
+body.-mod-acrylic .panel > header {
   background-color: var(--colorBgAlpha) !important;
 }
 
