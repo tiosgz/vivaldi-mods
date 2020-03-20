@@ -181,6 +181,12 @@ class ModPopupButtonsManager {
     // - handle AB placement change / hiding / showing
     // - # calculate if the popup should be placed above or below its parent
     // - fix behavior when another parent than address bar is used
+    // - st. like
+    //     - `isInAddressBar`
+    //     - `isInAddressField`
+    //     - `forceHidden` (if parent is hidden from settings)
+    //     - `hidden` (depending on DOM tree)
+    // - handle changes to the tree and compare to parent and parent.parent etc -> append/remove the button
 }
 
 // For testing
