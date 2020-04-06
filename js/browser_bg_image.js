@@ -41,7 +41,7 @@ setTimeout(function wait() {
         }
         function makeCheckbox(name) {
             if (name !== 'active' && name !== 'wallpaper_mode') return;
-            let group = document.querySelector('.vivaldi-settings .setting-section .settings-startpage .setting-group.unlimited ~ .setting-group.unlimited + .setting-group');
+            let group = document.querySelector('.vivaldi-settings .setting-section .settings-startpage + .setting-group > .setting-group:first-of-type');
             if (group && !document.querySelector('#-mod-acrylic-' + name + '-setting-checkbox')) {
                 let d = document.createElement('div');
                 d.classList.add('setting-single', '-mod-added-setting');
