@@ -134,13 +134,13 @@ body.-mod-acrylic .quick-commands {
     background-color: transparent !important;
 }
 body.-mod-acrylic .quick-commands .quick-command[data-selected] {
-    background: var(--colorBgAlphaHeavy) !important;
-    background-color: var(--colorBgAlphaHeavy) !important;
+    background: var(--colorHighlightBgAlpha) !important;
+    background-color: var(--colorHighlightBgAlpha) !important;
 }
 body.-mod-acrylic .qc-modal > div {
     background: var(--colorBgAlphaHeavy) !important;
     background-color: var(--colorBgAlphaHeavy) !important;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(5px);
 }
 
 /* Keyboard shortcuts cheat sheet */
