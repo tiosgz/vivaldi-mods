@@ -2,7 +2,7 @@
 
 Mods I use or have used in [Vivaldi](https://vivaldi.com/). Not all are by me — don't be surprised when you find your mod here (I tried to include name of the original author in the description below, but I may not be accurate). Some have a JS and a CSS part — that should be mentioned at the beginning of both files. Some of the mods may not work.
 
-Don't forget to check also [luetage's](https://github.com/luetage/vivaldi_modding), [LonM's](https://github.com/LonMcGregor/VivaldiMods) and [sjudenim's](https://github.com/sjudenim/Mods-for-Vivaldi) mods!
+Don't forget to check also [luetage's](https://github.com/luetage/vivaldi_modding), [LonM's](https://github.com/LonMcGregor/VivaldiMods), [sjudenim's](https://github.com/sjudenim/Mods-for-Vivaldi) and [DenPo's](https://github.com/justdanpo/VivaldiHooks) mods!
 
 If you don't know how to apply them, follow [this tutorial](https://forum.vivaldi.net/topic/10549/modding-vivaldi).
 
