@@ -152,6 +152,7 @@ Just files I haven't categorised yet.
 * `some_extensions_on_left.js` allows you to move given extensions' icons to the left of address bar
 * `svg_panel_icons.js` allows you to add custom themed icons to web panels
 * `tabs_horizontal_scroll.js` allows you to (horizontally) scroll horizontal tab bar
+* `tree_view_spacing.js` allows you to change the spacing of tree-view items (requires justanpo's VivaldiHooks)
 * `webpanel_icons.js` is a more complex version of `svg_panel_icons.js`
 * `window_size_to_css.js` adds CSS variables with the window size and position
 
