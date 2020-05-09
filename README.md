@@ -103,6 +103,7 @@ These files somehow change colors of the browser.
 * `transparent_sd_navigation.css` makes the navigation bar on start page transparent
 * `transparent_sd_thumbnails.css` removes the background of tiles on the start page (in fact only makes them semi-transparent, but you can simply use `transparent`)
 * `unify_opposite_window_borders_colors.css` — if you have tabs on the side, makes tabbar & panel and header & addressbar & statusbar the same colour (`&`'s are indicating the same color, `and` separating the two groups)
+* `window_panel_do_not_disturb.css` dims all background tabs in the window panel making the active tab easier to find (and the panel less disturbing)
 
 ### Window control buttons
 

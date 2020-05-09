@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+/* Reduce brightness of background tabs in the window panel, making the current
+tab easier to find and the panel less disturbing.
+
+Feel free to upvote the request at https://forum.vivaldi.net/topic/46781 */
+
+#window-panel .vivaldi-tree .tree-item:not([data-selected]):not(:hover) {
+    color: var(--colorFgFadedMore);
+    fill: var(--colorFgFadedMore);
+}
+#window-panel .vivaldi-tree .tree-item:not([data-selected]) .title.active {
+    color: var(--colorFg);
+    fill: var(--colorFg);
+}
