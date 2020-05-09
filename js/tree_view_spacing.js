@@ -5,5 +5,4 @@
 // Please keep in mind that you need to run VivaldiHooks by justdanpo in order
 // to get this working
 
-// Waiting for the UI may not be needed, but it’s better if we do
-vivaldi.jdhooks.onUIReady(() => vivaldi.jdhooks.require('common_VivaldiTreeList').defaultProps.rowHeight = 16);
+vivaldi.jdhooks.require('common_VivaldiTreeList').defaultProps.rowHeight = 16;
