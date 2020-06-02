@@ -2,6 +2,8 @@
 
 Mods I use or have used in [Vivaldi](https://vivaldi.com/). Not all are by me — don't be surprised when you find your mod here (I tried to include name of the original author in the description below, but I may not be accurate). Some have a JS and a CSS part — that should be mentioned at the beginning of both files. Some of the mods may not work.
 
+If you use JustDanPo’s VivaldiHooks, it may be easier for you to run all these mods as hooks (so that you can enable/disable them per profile).
+
 Don't forget to check also [luetage's](https://github.com/luetage/vivaldi_modding), [LonM's](https://github.com/LonMcGregor/VivaldiMods), [sjudenim's](https://github.com/sjudenim/Mods-for-Vivaldi) and [DenPo's](https://github.com/justdanpo/VivaldiHooks) mods!
 
 If you don't know how to apply them, follow [this tutorial](https://forum.vivaldi.net/topic/10549/modding-vivaldi).
@@ -153,7 +155,6 @@ Just files I haven't categorised yet.
 * `some_extensions_on_left.js` allows you to move given extensions' icons to the left of address bar
 * `svg_panel_icons.js` allows you to add custom themed icons to web panels
 * `tabs_horizontal_scroll.js` allows you to (horizontally) scroll horizontal tab bar
-* `tree_view_spacing.js` allows you to change the spacing of tree-view items (requires justanpo's VivaldiHooks)
 * `webpanel_icons.js` is a more complex version of `svg_panel_icons.js`
 * `window_size_to_css.js` adds CSS variables with the window size and position
 
