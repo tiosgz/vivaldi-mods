@@ -1,0 +1,21 @@
+div.pop-panel.bookmarks                          $ main container
+|-div.tree-view.bookmarks
+| |-div.tree-header
+| |-ul.tree
+|   |-li.tree-row.folder(.expandable.expanded|collapsed)
+|   | |-div.item-header
+|   | | |-span.icon
+|   | | |-span.title
+|   | | | ...and so on... (added...)
+|   | |-ul.children
+|   |   |-li.tree-row
+|   |   | ...and so on...
+|   |-li.tree-row.separator
+|   |-li.tree-row.link
+|   | |-div.item-header
+|   |   |-span.icon
+|   |   |-span.title
+|   |   | ...and so on... (URL, added...)
+|   | ...and so on...
+|-div.editor.bookmark                            $ edit fields, general info,
+                                                 $ thumbnail etc.

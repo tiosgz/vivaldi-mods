@@ -1,0 +1,78 @@
+#browser.theme-dark {
+    background: linear-gradient(45deg, #ba8 13%, transparent 0, transparent 88%, #ba8 0),
+        linear-gradient(135deg, transparent 37%, #863 0, #863 63%, transparent 0),
+        linear-gradient(45deg, transparent 37%, #ba8 0, #ba8 63%, transparent 0) #531 !important;
+    background-size: 25px 25px !important;
+}
+#browser:not(.tabs-top) #header,
+.toolbar.toolbar-addressbar,
+.startpage .speeddial .thumbnail-image,
+.startpage-navigation .button-startpage,
+.toolbar.toolbar-statusbar,
+.button-popup,
+#switch,
+.tab-position,
+.panel-group {
+    backdrop-filter: blur(2px) !important;
+}
+.startpage .speeddial .thumbnail-image,
+.toolbar.toolbar-statusbar,
+#switch,
+#switch button:hover,
+#switch button:focus,
+#switch button:active {
+    background-color: var(--colorBgAlphaHeavy) !important;
+}
+.panel-group {
+    background-color: var(--colorBgAlpha) !important;
+}
+.startpage,
+.startpage-navigation,
+.webpageview,
+#webview-container,
+.toolbar-mainbar,
+.button-popup-wrapper,
+.account-dialog {
+    background: transparent !important;
+}
+.startpage-navigation,
+#switch {
+    box-shadow: none !important;
+}
+.startpage-navigation-group,
+.webpanel-header {
+    border: none !important;
+}
+#tabs-container {
+    border-color: var(--colorBgAlphaHeavy) !important;
+}
+.button-startpage::after,
+.toolbar::after {
+    content: none !important;
+}
+.color-behind-tabs-off:not(.tabs-top) #header,
+.color-behind-tabs-off .tab.active,
+.color-behind-tabs-on .tab:not(.active),
+.color-behind-tabs-off .toolbar.toolbar-addressbar,
+.color-behind-tabs-off .button-toolbar > button:hover {
+    background: var(--colorAccentBgAlpha) !important;
+    color: var(--colorAccentFg) !important;
+}
+.color-behind-tabs-on:not(.tabs-top) #header,
+.color-behind-tabs-on .tab.active,
+.color-behind-tabs-off .tab:not(.active),
+.color-behind-tabs-on .toolbar.toolbar-addressbar,
+.color-behind-tabs-on .button-toolbar > button:hover {
+    background: var(--colorBgAlphaHeavy) !important;
+    color: var(--colorFg) !important;
+}
+.button-popup {
+    background-color: var(--colorBgAlpha) !important;
+}
+.account-dialog header {
+    background-color: var(--colorBgAlphaHeavier) !important;
+}
+#switch {
+    color: var(--colorFg);
+    fill: var(--colorFg);
+}
