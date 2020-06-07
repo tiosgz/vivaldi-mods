@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+/* Use monospaced font in the quick commands input */
+.qc-entry > input {
+  font-family: monospace !important;
+}
