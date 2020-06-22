@@ -26,9 +26,15 @@
         }
         setTimeout(update, 250);
     }
+    function setZoom(z) {
+        if (z && document.body)
+            document.body.style.setProperty('--vivUIZoom', z);
+    }
 
     update();
+    vivaldi.zoom.getVivaldiUIZoom(setZoom);
     window.addEventListener('resize', update);
+    vivaldi.zoom.onUIZoomChanged.addListener(setZoom);
     // TODO: check if it's current window
     // - the resized window ID is passed to the function
     // - you can get the ID of current window with v.wP.getCurrentId(callback)

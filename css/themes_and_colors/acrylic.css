@@ -9,8 +9,11 @@ body.-mod-acrylic #app {
   background-repeat: var(--startpageBgRepeat);
 }
 body.-mod-acrylic.-mod-wallpaper-sync #app {
-  background-size: calc(var(--screenWidth) * 1px) calc(var(--screenHeight) * 1px) !important;
-  background-position: calc((0 - var(--windowLeft)) * 1px) calc((0 - var(--windowTop)) * 1px);
+  background-size: calc(var(--screenWidth)  * (1 / var(--vivUIZoom)) * 1px)
+                   calc(var(--screenHeight) * (1 / var(--vivUIZoom)) * 1px)
+                   !important;
+  background-position: calc((0 - var(--windowLeft)) * (1 / var(--vivUIZoom)) * 1px)
+                       calc((0 - var(--windowTop))  * (1 / var(--vivUIZoom)) * 1px);
 }
 body.-mod-acrylic #browser {
   /*backdrop-filter: blur(3px);*/
