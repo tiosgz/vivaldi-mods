@@ -84,6 +84,7 @@ Obviously changes the tabs area.
 * `fixed_vertical_tabs_width.css` forces vertical tabs list to a given width (disables resizing)
 * `hide_tab_audio_icon.css` should hide the speaker icon from tabs playing sound (not by me, but I really don't remember the author)
 * `in-tab_group_indicators.css` moves stacking indicators *into* the tab header (only for bottom tabs)
+* `minimal_tab_taskbar.css` makes bottom tab bar an overlay with only favicons
 * `move_tab_audio_icon.css` moves the audio icon beside title (I think by retoree (?))
 * `pinned_tab_indicator.css` adds a pin icon (unicode character) before pinned tabs' titles—useful with vertical tabs (again, I don't remember the author)
 * `tabs_vertical_scrolling.css` allows you to vertically scroll bottom tabs (and view two rows at once)

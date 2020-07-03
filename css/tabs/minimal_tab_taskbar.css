@@ -12,6 +12,7 @@
     border-radius: var(--radius);
     margin: 0 !important;
     background: var(--colorBgAlphaHeavy) !important;
+    backdrop-filter: blur(10px);
     /* Need this to make the tabs display */
     min-width: 90px;
 }
