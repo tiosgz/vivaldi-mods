@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/* Tab bar as overlay with favicons favicons */
+
+#tabs-container.bottom {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    width: auto;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: var(--radius);
+    margin: 0 !important;
+    background: var(--colorBgAlphaHeavy) !important;
+    /* Need this to make the tabs display */
+    min-width: 90px;
+}
+#tabs-container.bottom > .toolbar-tabbar {
+    display: none;
+}
+#tabs-container.bottom .tab-position {
+    transform: none !important;
+    position: unset !important;
+    width: 30px !important;
+    height: 30px !important;
+}
+#tabs-container.bottom .tab-strip {
+    display: block;
+}
+#tabs-container.bottom .tab-strip > span {
+    display: inline-block;
+}
+#tabs-container.bottom .tab {
+    border: none !important;
+    border-radius: var(--radius) !important;
+    background: transparent !important;
+}
+#tabs-container.bottom .tab.active {
+    background: var(--colorAccentBg) !important;
+}
+/*#tabs-container.bottom .tab > :not(.tab-header),*/
+#tabs-container.bottom .tab-header > :not(.favicon) {
+    display: none !important;
+}
+#tabs-container.bottom .tab-group-indicator {
+    bottom: 0;
+}
+#tabs-container.bottom .tab-group-indicator .tab-indicator {
+    border-width: 0;
+    height: 3px;
+}
