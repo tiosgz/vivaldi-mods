@@ -49,3 +49,8 @@
     border-width: 0;
     height: 3px;
 }
+/* Those Chrome-like corners are just annoying */
+#tabs-container.bottom .tab::before,
+#tabs-container.bottom .tab::after {
+    display: none;
+}
