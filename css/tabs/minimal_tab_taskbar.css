@@ -14,7 +14,7 @@
     background: var(--colorBgAlphaHeavy) !important;
     backdrop-filter: blur(10px);
     /* Need this to make the tabs display */
-    min-width: 90px;
+    min-width: 60px;
 }
 #tabs-container.bottom > .toolbar-tabbar {
     display: none;
