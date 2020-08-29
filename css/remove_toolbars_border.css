@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 /* No border for addressbar */
-.address-bottom .toolbar-addressbar {
+.address-bottom .UrlBar {
 	box-shadow: none !important;
 }
 .address-top .toolbar-mainbar:after,
-.address-top .toolbar-addressbar:after {
+.address-top .UrlBar:after {
 	display: none !important;
 }
 

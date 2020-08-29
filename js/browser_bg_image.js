@@ -75,9 +75,11 @@ setTimeout(function wait() {
         body.addEventListener('click', () => setTimeout(() => makeCheckbox('wallpaper_mode'), 50));
         chrome.storage.onChanged.addListener((changes, area) => {
             if (area === 'local' && changes._mods) {
-                if (changes._mods.oldValue.acrylic.active !== changes._mods.newValue.acrylic.active)
+                if ((!changes._mods.oldValue && changes._mods.newValue)
+                    || (changes._mods.oldValue.acrylic.active !== changes._mods.newValue.acrylic.active))
                     toggle(changes._mods.newValue.acrylic.active, true);
-                if (changes._mods.oldValue.acrylic.wallpaper_mode !== changes._mods.newValue.acrylic.wallpaper_mode)
+                if ((!changes._mods.oldValue && changes._mods.newValue)
+                    || (changes._mods.oldValue.acrylic.wallpaper_mode !== changes._mods.newValue.acrylic.wallpaper_mode))
                     toggle(changes._mods.newValue.acrylic.wallpaper_mode, true);
             }
         })
@@ -91,21 +93,6 @@ setTimeout(function wait() {
             }
             return path;
         }
-        // var style = document.createElement('style');
-        // style.innerHTML = `
-        //     #app {
-        //         background-image: var(--startpageBgImage);
-        //         background-color: var(--startpageBgColor);
-        //         background-size: var(--startpageBgSize);
-        //         background-repeat: var(--startpageBgRepeat);
-        //     }
-        //     #browser {
-        //         /*backdrop-filter: blur(3px);*/
-        //         background: transparent !important;
-        //         background-color: transparent !important;
-        //     }
-        // `;
-        // head.appendChild(style);
         vivaldi.prefs.get('vivaldi.startpage.background.color', function(bg_color) {
             if (!bg_color) bg_color = '#cccccc';
             vivaldi.prefs.get('vivaldi.startpage.background.color_custom', function(custom_bg_color) {

@@ -2,22 +2,22 @@
 
 /* Use with /js/addressbar_toolbar_toggle.js */
 
-.toolbar-addressbar.toolbar > .toolbar.toolbar-droptarget.toolbar-mainbar.mod-addressbar-toolbar-collapsed > div.collapsible {
+.UrlBar > .toolbar.toolbar-droptarget.toolbar-mainbar.mod-addressbar-toolbar-collapsed > div.collapsible {
   display: none;
 }
-.toolbar-addressbar.toolbar > .toolbar.toolbar-droptarget.toolbar-mainbar button.mod-addressbar-toolbar-toggle {
+.UrlBar > .toolbar.toolbar-droptarget.toolbar-mainbar button.mod-addressbar-toolbar-toggle {
   width: 12px !important;
   min-width: 12px !important;
 }
-.toolbar-addressbar.toolbar > .toolbar.toolbar-droptarget.toolbar-mainbar button.mod-addressbar-toolbar-toggle svg {
+.UrlBar > .toolbar.toolbar-droptarget.toolbar-mainbar button.mod-addressbar-toolbar-toggle svg {
   height: 12px;
   width: 6px;
 }
-.toolbar-addressbar.toolbar > .toolbar.toolbar-droptarget.toolbar-mainbar:not(.mod-addressbar-toolbar-collapsed) button.mod-addressbar-toolbar-toggle svg path {
+.UrlBar > .toolbar.toolbar-droptarget.toolbar-mainbar:not(.mod-addressbar-toolbar-collapsed) button.mod-addressbar-toolbar-toggle svg path {
   d: path('M4 0h-0.5l-3.5 3.5v1l3.5 3.5h0.5v-0.5l-3.5 -3.5, 3.5 -3.5v-0.5z');
   /*d: path('M5 0h-0.5l-4.5 4.5v1l4.5 4.5h0.5v-0.5l-4.5 -4.5, 4.5 -4.5v-0.5z');*/
 }
-.toolbar-addressbar.toolbar > .toolbar.toolbar-droptarget.toolbar-mainbar.mod-addressbar-toolbar-collapsed button.mod-addressbar-toolbar-toggle svg path {
+.UrlBar > .toolbar.toolbar-droptarget.toolbar-mainbar.mod-addressbar-toolbar-collapsed button.mod-addressbar-toolbar-toggle svg path {
   d: path('M0 0h0.5l3.5 3.5v1l-3.5 3.5h-0.5v-0.5l3.5 -3.5, -3.5 -3.5v-0.5z');
   /*d: path('M0 0h0.5l4.5 4.5v1l-4.5 4.5 h-0.5v-0.5l4.5 -4.5, -4.5 -4.5v-0.5z');*/
 }

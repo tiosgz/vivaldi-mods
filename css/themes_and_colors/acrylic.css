@@ -44,7 +44,7 @@ body.-mod-acrylic .toolbar-statusbar,
 body.-mod-acrylic .vivaldi-settings,
 body.-mod-acrylic .vivaldi-settings .settings-sidebar,
 body.-mod-acrylic .startpage .manager > div,
-body.-mod-acrylic .addressfield,
+body.-mod-acrylic .UrlBar-AddressField,
 body.-mod-acrylic #header,
 body.-mod-acrylic .welcome-wrapper,
 body.-mod-acrylic .notes-editor,
@@ -67,12 +67,12 @@ body.-mod-acrylic .panel > header {
 }
 
 /* Keep the accent color */
-body.-mod-acrylic .color-behind-tabs-off .toolbar-addressbar,
+body.-mod-acrylic .color-behind-tabs-off .UrlBar,
 body.-mod-acrylic .color-behind-tabs-off .tab.active {
   background: var(--colorAccentBgAlpha) !important;
   color: var(--colorAccentFg) !important;
 }
-body.-mod-acrylic .color-behind-tabs-off .toolbar-addressbar > .toolbar {
+body.-mod-acrylic .color-behind-tabs-off .UrlBar > .toolbar {
   color: var(--colorAccentFg) !important;
 }
 body.-mod-acrylic .color-behind-tabs-off #tabs-container {
@@ -82,8 +82,8 @@ body.-mod-acrylic .color-behind-tabs-off #tabs-container {
 body.-mod-acrylic .color-behind-tabs-off .HiddenToggleExtensionIcon {
   background-color: var(--colorAccentBgAlpha) !important;
 }
-body.-mod-acrylic .color-behind-tabs-off .toolbar-addressbar > .toolbar .button-toolbar > button:hover,
-body.-mod-acrylic .color-behind-tabs-off .toolbar-addressbar > .toolbar .button-toolbar > button:active,
+body.-mod-acrylic .color-behind-tabs-off .UrlBar > .toolbar .button-toolbar > button:hover,
+body.-mod-acrylic .color-behind-tabs-off .UrlBar > .toolbar .button-toolbar > button:active,
 body.-mod-acrylic .color-behind-tabs-off .button-circularimage.profile-popup > button:hover,
 body.-mod-acrylic .color-behind-tabs-off .button-circularimage.profile-popup > button:active {
   background-color: var(--colorAccentBgDarker) !important;
@@ -107,8 +107,8 @@ body.-mod-acrylic .color-behind-tabs-on .tab:not(.active) {
 body.-mod-acrylic .color-behind-tabs-on .HiddenToggleExtensionIcon {
   background-color: var(--colorBgAlphaHeavy) !important;
 }
-body.-mod-acrylic .color-behind-tabs-on .toolbar-addressbar > .toolbar .button-toolbar > button:hover,
-body.-mod-acrylic .color-behind-tabs-on .toolbar-addressbar > .toolbar .button-toolbar > button:active,
+body.-mod-acrylic .color-behind-tabs-on .UrlBar > .toolbar .button-toolbar > button:hover,
+body.-mod-acrylic .color-behind-tabs-on .UrlBar > .toolbar .button-toolbar > button:active,
 body.-mod-acrylic .color-behind-tabs-on .button-circularimage.profile-popup > button:hover,
 body.-mod-acrylic .color-behind-tabs-on .button-circularimage.profile-popup > button:active {
   background-color: var(--colorBgDarker) !important;
@@ -118,8 +118,8 @@ body.-mod-acrylic .color-behind-tabs-on .button-circularimage.profile-popup > bu
 body.-mod-acrylic .private-intro {
   background: var(--colorBgAlphaHeavy);
 }
-body.-mod-acrylic .private .toolbar-addressbar .addressfield,
-body.-mod-acrylic .private .toolbar-addressbar .searchfield {
+body.-mod-acrylic .private .UrlBar .UrlBar-AddressField,
+body.-mod-acrylic .private .UrlBar .UrlBar-SearchField {
   border-color: var(--colorBgIntenser) !important;
   color: var(--colorFg) !important;
   fill: var(--colorFg) !important;

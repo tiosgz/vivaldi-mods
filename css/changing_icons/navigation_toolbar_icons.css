@@ -5,7 +5,7 @@
 /* To change the icons just place your SVG path code between “d: path('” and “');” */
 
 /* Fix for rewind and fast forward buttons width */
-.toolbar-addressbar > .toolbar-large:first-child > .button-toolbar.button-narrow > button {
+.UrlBar > .toolbar-large:first-child > .button-toolbar.button-narrow > button {
 	width: 34px;
 }
 
