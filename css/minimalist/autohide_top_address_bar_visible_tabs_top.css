@@ -1,0 +1,35 @@
+/*Addressbar settings*/
+.UrlBar {
+    visibility: visible;
+    position: absolute;
+    top: -6%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    opacity: 0;
+    z-index: 2;
+    transition:
+        opacity .1s linear .1s,
+        visibility 0s linear 1s,
+        top .2s linear,
+        filter .1s linear .1s;
+}
+
+#header:hover ~ #main .UrlBar, .UrlBar:hover, .UrlBar:focus-within, .UrlBar:focus
+ {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    visibility: visible;
+    opacity: .60;
+}
+
+.UrlBar:focus-within, .UrlBar:hover, .UrlBar:focus {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+    filter: drop-shadow(0 1mm 4mm #111111);
+}
