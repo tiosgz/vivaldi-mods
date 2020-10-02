@@ -1,0 +1,56 @@
+.address-top.tabs-top .UrlBar {
+    visibility: visible;
+    position: absolute;
+    top: -6%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    opacity: 0;
+    z-index: 5;
+    transition:
+        opacity .1s linear .1s,
+        visibility 0s linear 1s,
+        top .2s linear,
+        filter .1s linear .1s;
+}
+
+.address-top.tabs-top > #header:hover ~ #main .UrlBar {
+    opacity: .60;
+}
+
+.address-top.tabs-top > #header:hover ~ #main .UrlBar,
+.address-top.tabs-top .UrlBar:hover,
+.address-top.tabs-top .UrlBar:focus-within,
+.address-top.tabs-top .UrlBar:focus {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    visibility: visible;
+}
+
+.address-top.tabs-top .UrlBar:focus-within,
+.address-top.tabs-top .UrlBar:hover,
+.address-top.tabs-top .UrlBar:focus {
+    opacity: 1;
+    transition-delay: 0s;
+    filter: drop-shadow(0 1mm 4mm #111111);
+}
+
+#browser.address-top.bookmark-bar-top.tabs-top .bookmark-bar {
+    position: absolute !important;
+    width: 100%;
+    transition: transform 0.2s !important;
+    z-index: 4;
+    top: 0px;
+    transform: translateY(-100%);
+	height: 50px;
+}
+
+#browser.address-top.bookmark-bar-top.tabs-top .bookmark-bar:hover,
+#browser.address-top.bookmark-bar-top.tabs-top .UrlBar:hover ~ .bookmark-bar,
+#browser.address-top.bookmark-bar-top.tabs-top #header:hover ~ #main .bookmark-bar {
+    transform: translateY(0);
+}

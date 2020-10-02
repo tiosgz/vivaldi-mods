@@ -47,6 +47,7 @@ These mods usually (auto-)hide part of the UI.
 
 * `autohide_settings_sidebar.css` reduces it to only icons (unless moused over)
 * `autohide_speeddial_navigation.css` – no need to explain
+* `autohide_top_address_bookmark_bar.css` auto-hides address & bookmarks bars if they’re, together with the tabs bar, at the top (GitHub PR [#2](https://github.com/tiosgz/vivaldi-mods/pull/2) by mbartlet)
 * `autoshrink_side_tabs.css` reduces the tab bar to only icons unless moused over (be careful with close buttons!)
 * `bookmarks_hide_nickname.css` hides nickname in the bookmarks editor (previously also nick and description in the bookmarks manager tree)
 * `hide_header_on_menu_button_only.css` hides the header if you use native window and other-than-top tabs (we still have Alt to access the menu)
