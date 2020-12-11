@@ -6,6 +6,7 @@
     position: absolute;
     bottom: 6px;
     right: 6px;
+    padding: 0 !important;
     border-radius: var(--radius);
     background: var(--colorBgAlphaHeavy) !important;
     backdrop-filter: blur(10px);
