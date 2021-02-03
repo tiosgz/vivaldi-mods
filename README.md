@@ -57,6 +57,7 @@ These mods usually (auto-)hide part of the UI.
 * `minimize_inactive_panel.css` hides icon-only panel (can be shown with mouse or just by opening any panel (keyboard, mouse gesture, menu etc))
 * `minimum_height_tabbar.css` removes the spacing above tabs also in non-maximised windows
 * `navigation_toolbar_toggle.css` is a CSS part of a JS mod (`js/addressbar_toolbar_toggle.js`)
+* `no_window_buttons.css` allows windows not to have any decorations (unfortunately there’s still a resize area around borders)
 * `siteinfo_text_on_hover.css` hides the site info text (unless moused over)
 * `thinner_extension_toggle.css` reduces width of extension toggle button (see also `css/changing_icons/extension_toggle_icon.css`)
 

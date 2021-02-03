@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/* Hide window control buttons. This allows borderless window
+even on Wayland, where Chromium would otherwise add its ugly
+blue bar */
+
+#browser:not(.tabs-top):not(.horizontal-menu) #header,
+#browser #titlebar {
+  display: none;
+}
+#browser.horizontal-menu .topmenu {
+  margin-left: 5px;
+}
+#browser.tabs-top #tabs-container {
+  padding: 0;
+}

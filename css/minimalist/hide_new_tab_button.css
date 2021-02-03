@@ -1,5 +1,5 @@
 @charset "UTF-8";
 
-.newtab {
-	display: none;
+.tab-strip > .toolbar-tabbar {
+	display: none !important;
 }

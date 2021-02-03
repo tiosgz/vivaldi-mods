@@ -28,8 +28,9 @@
     display: none;
 }
 #tabs-tabbar-container.bottom .tab-position {
-    transform: none !important;
     position: unset !important;
+    --PositionX: 0 !important;
+    --PositionY: 0 !important;
     width: 30px !important;
     height: 30px !important;
 }
@@ -42,6 +43,8 @@
 }
 #tabs-tabbar-container.bottom .toolbar-tabbar > .button-toolbar {
     position: unset !important;
+    --PositionX: 0 !important;
+    --PositionY: 0 !important;
 }
 #tabs-tabbar-container.bottom .tab {
     margin: 0 !important;
